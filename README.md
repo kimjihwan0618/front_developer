@@ -120,7 +120,7 @@ Javascript
 Html
 
 <pre><code><form method="post" @submit.prevent="sendEmail">
-   <ul>
+ <ul>
      <li>
        <label for="name">이름</label>
        <input type="text" class="name" name="user_name" />
