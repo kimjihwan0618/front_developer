@@ -116,22 +116,3 @@ Javascript
     );
   }
 }</pre></code>
-
-Html
-
-<pre><code><form method="post" @submit.prevent="sendEmail">
- <ul>
-     <li>
-       <label for="name">이름</label>
-       <input type="text" class="name" name="user_name" />
-     </li>
-     <li>
-       <label for="email">이메일</label>
-       <input type="email" calss="email" name="user_email" />
-     </li>
-     <li>
-       <label for="text">메세지 입력</label>
-       <textarea name="message"></textarea>
-     </li>
-   </ul>
- </form></pre></code>
