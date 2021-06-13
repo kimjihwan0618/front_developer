@@ -19,7 +19,7 @@ Vue와, Nuxt 프레임워크가 제공하는 구조로 FE 작업을 하였으며
 ### about me
 - JS로 슬라이드(Carousel)를 구현했습니다.
 
-<img src="https://kimjihwan0618.github.io/web/assets/video/about_vd.gif" width="700">
+<img src="https://kimjihwan0618.github.io/web/assets/video/about_vd2.gif" width="700">
 
 <pre><code>arrowLeft() {
   if (this.aboutMeIndex == 0) {
