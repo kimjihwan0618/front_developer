@@ -1,0 +1,40 @@
+@import "@/assets/scss/header.scss";
+@import "@/assets/scss/footer.scss";
+@import "@/assets/scss/mobileBar.scss";
+@import "@/assets/scss/main.scss";
+@import "@/assets/scss/menu-ic.scss";
+@import "@/assets/scss/reset.scss";
+
+@font-face {
+  font-family: "NotoSansKR-Bold";
+  src: url(../fonts/NotoSansKR-Bold.otf);
+}
+@font-face {
+  font-family: "NotoSansKR-Midium";
+  src: url(../fonts/NotoSansKR-Medium.otf);
+}
+@font-face {
+  font-family: "NotoSansKR-Regular";
+  src: url(../fonts/NotoSansKR-Regular.otf);
+}
+@font-face {
+  font-family: "NotoSansKR-Thin";
+  src: url(../fonts/NotoSansKR-Thin.otf);
+}
+@font-face {
+  font-family: "JacquesFrancoisShadow-Regular";
+  src: url(../fonts/JacquesFrancoisShadow-Regular.ttf);
+}
+
+body,
+html {
+  font-family: "NotoSansKR-Regular";
+  font-size: 10px;
+  color: #333333;
+  // scroll-behavior: smooth;
+}
+a,
+span,
+div {
+  -webkit-tap-highlight-color: transparent;
+}
