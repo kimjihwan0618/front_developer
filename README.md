@@ -21,6 +21,9 @@ Vue와, Nuxt 프레임워크가 제공하는 구조로 FE 작업을 하였으며
 
 <img src="https://kimjihwan0618.github.io/web/assets/video/about_vd2.gif" width="700">
 
+
+Javascript
+
 <pre><code>arrowLeft() {
   if (this.aboutMeIndex == 0) {
     this.aboutMeIndex = this.aboutMe.length;
@@ -42,6 +45,12 @@ aboutMeSwipe() {
   this.$refs.aboutImg[this.aboutMeIndex].classList.add("on");
   this.$refs.circleMove.style.left = this.aboutMeIndex * 2 * 10 + "px";
 }</pre></code>
+
+Html
+
+<pre><code>
+</pre></code>
+
 
 ### carrer
 
@@ -76,8 +85,10 @@ Html
 <pre><code><span class="total-career">경력 {{ diffText }}개월</span></pre></code>
 
 ### contact
-- javascript API email-js를사용하여 이메일을 받을수 있도록 기능을 구현하였습니다..
+- javascript API email-js를사용하여 이메일을 받을수 있도록 기능을 구현하였습니다.
 <img src="https://kimjihwan0618.github.io/web/assets/video/contact_vd.gif" width="700">
+
+Javascript
 
 <pre><code>sendEmail: e => {
     if (
@@ -105,3 +116,22 @@ Html
     );
   }
 }</pre></code>
+
+Html
+
+<pre><code><form method="post" @submit.prevent="sendEmail">
+   <ul>
+     <li>
+       <label for="name">이름</label>
+       <input type="text" class="name" name="user_name" />
+     </li>
+     <li>
+       <label for="email">이메일</label>
+       <input type="email" calss="email" name="user_email" />
+     </li>
+     <li>
+       <label for="text">메세지 입력</label>
+       <textarea name="message"></textarea>
+     </li>
+   </ul>
+ </form></pre></code>
