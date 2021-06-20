@@ -16,7 +16,9 @@
           ref="navTitle"
           @click="clickNav(index)"
         >
-          <nuxt-link :to="navTitle.link">{{ navTitle.name }}</nuxt-link>
+          <nuxt-link ref="navLink" :to="navTitle.link">{{
+            navTitle.name
+          }}</nuxt-link>
         </li>
       </ul>
       <ul class="sns-wrap">
@@ -113,6 +115,14 @@ export default {
     scrollTop() {
       window.scrollTo({ top: 0 });
     }
+  },
+  created() {
+    this.$nuxt.$on("navChange", index => {
+      this.$refs.navLink.map(navArr => {
+        navArr.$el.classList.remove("nuxt-link-exact-active");
+      });
+      this.$refs.navLink[index].$el.classList.add("nuxt-link-exact-active");
+    });
   }
   // mounted() {
   //   this.$emit("navActive", this.$refs.navTitle);

@@ -8,7 +8,9 @@
           ref="navTitle"
           @click="mobileNavClick(index)"
         >
-          <nuxt-link :to="navTitle.link">{{ navTitle.name }}</nuxt-link>
+          <nuxt-link ref="navLink" :to="navTitle.link">{{
+            navTitle.name
+          }}</nuxt-link>
         </li>
         <span class="m-sns-box">
           <a href="https://open.kakao.com/o/sfA11m4c" target="_blank">
@@ -91,6 +93,14 @@ export default {
       this.$nuxt.$emit("clickNav", index);
       this.$emit("mobileMenuClick");
     }
+  },
+  created() {
+    this.$nuxt.$on("navChange", index => {
+      this.$refs.navLink.map(navArr => {
+        navArr.$el.classList.remove("nuxt-link-exact-active");
+      });
+      this.$refs.navLink[index].$el.classList.add("nuxt-link-exact-active");
+    });
   }
 };
 </script>

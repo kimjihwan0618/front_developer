@@ -81,17 +81,17 @@ export default {
           if (this.scrollY < i) {
             this.scrollY = i;
             console.log("내려갈때 인덱스증가 >>" + i);
-            this.$nuxt.$router.push(this.navLink[i]);
+            this.$nuxt.$emit("navChange", i);
           }
         } else {
           if (window.scrollY === 0) {
             this.scrollY = 0;
-            this.$nuxt.$router.push(this.navLink[0]);
+            this.$nuxt.$emit("navChange", 0);
           }
           if (this.scrollY > i) {
             this.scrollY = i;
             console.log("올라갈때 인덱스감소 >>" + i);
-            this.$nuxt.$router.push(this.navLink[i]);
+            this.$nuxt.$emit("navChange", i);
           }
         }
       }
