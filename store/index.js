@@ -32,7 +32,7 @@ const store = () => {
               "'SHIFT'앱에 사용되는 템플릿 디자인 및 퍼블리싱",
               "카드뉴스 & SNS 배너 디자인"
             ],
-            guitar: "웹&앱 디자이너로 재직.(디자인과 HTML, CSS까지 업무수행)",
+            guitar: "웹&앱 디자이너로 재직.",
             link: "http://www.jejecomms.com/",
             class: "none"
           };
@@ -44,7 +44,8 @@ const store = () => {
             lang: "Html, Css, Jquery, Javascirpt, Spring Boot",
             work: [
               "퍼블리싱(100%)",
-              "Spring Boot와 Javascript를 이용한 일부 프론트엔드 업무지원"
+              "프론트엔드(30%)",
+              "JS API 사용(Swiper.js)"
             ],
             guitar: "PlayStore 정식 출시",
             link:
@@ -59,8 +60,8 @@ const store = () => {
             lang: "Html, Css, Jquery, Javascirpt, Spring Boot",
             work: [
               "퍼블리싱(100%)",
-              "디자인(60%)",
-              " javascript,juqery API 사용(Chart.js, datepicker)"
+              "디자인(100%)",
+              "JS API 사용(Chart.js, datepicker.js)"
             ],
             guitar: "PlayStore 정식 출시",
             link:
@@ -87,12 +88,42 @@ const store = () => {
             lang: "Html, Css, Javascirpt, Vue",
             work: [
               "퍼블리싱(100%)",
-              "디자인(100%)",
-              " Vue를 사용한 프론트엔드 업무지원"
+              "디자인(100%)"
             ],
-            guitar: "최신버전 Vue3와 Nuxt를 사용한 환경에 개발",
-            link: "https://hingomwave.com/",
+            guitar: "Vue3와 Nuxt를 사용한 환경에 제작",
+            link: "https://www.hingomwave.com/",
             class: "none"
+          };
+        } else if (index === 6) {
+          state.projectInfo = {
+            title: "MSI",
+            date: "2021.07 ~ 2021.08",
+            info: "(주)엠에쓰아이 회사  홈페이지 제작",
+            lang: "Html, Css, Javascirpt",
+            work: [
+              "퍼블리싱(100%)",
+              "디자인(100%)",
+              "JS API 사용(Swiper.js)"
+            ],
+            guitar: "",
+            link: "http://msi-emb.com/",
+            class: "none"
+          };
+        } else if (index === 7) {
+          state.projectInfo = {
+            title: "UBI-PLUS 디지털 치료제",
+            date: "2022.01 ~ 2022.08",
+            info: "UBI-PLUS  디지털 치료제 관리자(의사) 페이지 제작",
+            lang: "Html, Css, Javascirpt, Vue",
+            work: [
+              "퍼블리싱(100%)",
+              "디자인(100%)",
+              'Front-End(100%)',
+              "JS API 사용(Chart.js, Grid.js, Canlandar.js)"
+            ],
+            guitar: "모바일을 제외한 태블릿까지 지원되는 사이즈입니다.",
+            link: "http://msi-emb.com/",
+            class: "pc"
           };
         }
       }
