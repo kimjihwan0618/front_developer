@@ -25,7 +25,7 @@
           </li>
           <li class="list">
             <dl>
-              <dt>개발 언어</dt>
+              <dt>스킬</dt>
               <dd>{{ projectInfo.lang }}</dd>
             </dl>
           </li>
@@ -70,15 +70,15 @@ export default {
   computed: {
     projectInfo() {
       return this.$store.state.projectInfo;
-    }
+    },
   },
   created() {
-    this.$nuxt.$on("projectClick", index => {});
+    this.$nuxt.$on("projectClick", (index) => {});
   },
   methods: {
     removeProPop() {
       this.$nuxt.$emit("removeProPop", "removeProPop");
-    }
-  }
+    },
+  },
 };
 </script>

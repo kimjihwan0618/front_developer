@@ -113,7 +113,7 @@ const store = () => {
           state.projectInfo = {
             title: "UBI-PLUS 디지털 치료제",
             date: "2022.01 ~ 2022.08",
-            info: "UBI-PLUS  디지털 치료제 관리자(의사) 페이지 제작",
+            info: "디지털 치료제 관리자(의사) 페이지 제작",
             lang: "Html, Css, Javascirpt, Vue",
             work: [
               "퍼블리싱(100%)",
@@ -121,7 +121,22 @@ const store = () => {
               'Front-End(100%)',
               "JS API 사용(Chart.js, Grid.js, Canlandar.js)"
             ],
-            guitar: "모바일을 제외한 태블릿까지 지원되는 사이즈입니다.",
+            guitar: "화면뷰를 위해 개발하였던 UI를 가져와 더미데이터로 표현하였습니다.",
+            link: "http://msi-emb.com/",
+            class: "pc"
+          };
+        } else if (index === 8) {
+          state.projectInfo = {
+            title: "실시간 설비 데이터 모니터링/분석(FDC)",
+            date: "2022.07 ~ 2022.11",
+            info: "실시간 이상감지 화면 및 Back-End 기능개발",
+            lang: "Html, Css, Javascirpt, Python, MySQL, RabbiltMQ",
+            work: [
+              'Front-End(100%)',
+              'Back-End(100%)',
+              "JS API 사용(Kendo.js, Highcharts.js)"
+            ],
+            guitar: "화면뷰를 위해 개발하였던 UI를 가져와 더미데이터로 표현하였습니다.",
             link: "http://msi-emb.com/",
             class: "pc"
           };

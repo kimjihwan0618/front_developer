@@ -15,11 +15,11 @@
         <p>
           <span class="list__wrap">
             <span class="inner" ref="textList">
-              <span class="item">배움을 즐기는</span>
-              <span class="item">팀원과 소통하는</span>
+              <span class="item current">배움을 즐기는</span>
+              <span class="item next">팀원과 소통하는</span>
               <span class="item">끊임없이 도전하는</span>
               <span class="item">스스로 문제를 찾는</span>
-              <span class="item">UI/UX에 흥미가 많은</span>
+              <span class="item prev">UI/UX에 흥미가 많은</span>
             </span> </span
           >&nbsp;개발자
         </p>
@@ -30,41 +30,36 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      my: [
-        "배움을 즐기는",
-        "팀원과 소통하는",
-        "끊임없이 도전하는",
-        "스스로 문제를 찾는",
-        "UI/UX에 흥미가 많은",
-      ],
-    };
-  },
   methods: {
-    test() {
-      // console.log(this.$refs.textList.childNodes[0].textContent);
-      // let item = document.createElement("span");
-      // item.textContent = this.$refs.textList.childNodes[0].textContent;
-      // this.$refs.textList.childNodes[0].remove();
-      // this.$refs.textList.appendChild(item);
+    start2() {
+      //.prev 클래스 삭제
+      document.querySelector(".list__wrap .prev").classList.remove("prev");
+
+      //.current -> .prev
+      let current = document.querySelector(".list__wrap .current");
+      current.classList.remove("current");
+      current.classList.add("prev");
+
+      //.next -> .current
+      let next = document.querySelector(".list__wrap .next");
+      //다음 목록 요소가 널인지 체크
+      if (next.nextElementSibling == null) {
+        document
+          .querySelector(".list__wrap .inner span:first-child")
+          .classList.add("next");
+      } else {
+        //목록 처음 요소를 다음 요소로 선택
+        next.nextElementSibling.classList.add("next");
+      }
+      next.classList.remove("next");
+      next.classList.add("current");
     },
-    changeTxt() {
-      let start = this.test;
-      this.$refs.textList.childNodes[0].style.transform = "translateY(-81px)";
-      this.$refs.textList.childNodes[2].style.transform = "translateY(-81px)";
-      let item = document.createElement("span");
-      item.textContent = this.$refs.textList.childNodes[0].textContent;
-      this.$refs.textList.childNodes[0].remove();
-      this.$refs.textList.appendChild(item);
-      // setTimeout(function () {
-      //   start();
-      //   // this.$refs.textList.childNodes[0].remove()
-      // }, 00);
+    start1() {
+      setInterval(this.start2, 1350);
     },
   },
   mounted() {
-    setInterval(this.changeTxt, 2000);
+    this.start1();
   },
 };
 </script>

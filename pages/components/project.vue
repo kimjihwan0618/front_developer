@@ -100,13 +100,13 @@ export default {
           ],
         },
         {
-          img: require("@/assets/images/project/project7.png"),
+          img: "",
           title: "MSI",
           text: "웹디자인과 앱 반응형 퍼블리싱",
           tag: ["#반응형", "#웹디자인", "#Publishing", "#Swiper"],
         },
         {
-          img: require("@/assets/images/project/project7.png"),
+          img: "",
           title: "UBI-PLUS 디지털 치료제",
           text: "웹디자인, 웹앱 반응형 퍼블리싱 및 프런트엔드 기능 구현",
           tag: [
@@ -117,6 +117,12 @@ export default {
             "#Chart.js",
             "#Drag & Drop",
           ],
+        },
+        {
+          img: "",
+          title: "실시간 설비 데이터 모니터링/분석(FDC)",
+          text: "프런트엔드, 백엔드, MQ 통신 화면&기능 구현",
+          tag: ["#Front-End", "#Back-End", "#Rabbitmq", "#Python", "#Django"],
         },
       ],
     };
