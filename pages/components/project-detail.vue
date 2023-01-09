@@ -49,14 +49,18 @@
           </li>
         </ul>
 
-        <div class="link_wrap">
+        <div class="link_wrap" v-if="projectInfo.link !== ''">
           <h3>View</h3>
-          <a :href="projectInfo.link" target="_blank" :class="projectInfo.class"
+          <a
+            :href="projectInfo.link"
+            target="_blank"
+            :class="projectInfo.class"
+            v-if="projectInfo.link !== ''"
             >링크 <span>→</span></a
           >
         </div>
 
-        <div class="frame_wrap">
+        <div class="frame_wrap" v-if="projectInfo.link !== ''">
           <iframe :src="projectInfo.link" frameborder="0"></iframe>
           <div :class="projectInfo.class"></div>
         </div>

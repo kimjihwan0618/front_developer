@@ -122,10 +122,11 @@ const store = () => {
               "JS API 사용(Chart.js, Grid.js, Canlandar.js)"
             ],
             guitar: "화면뷰를 위해 개발하였던 UI를 가져와 더미데이터로 표현하였습니다.",
-            link: "http://msi-emb.com/",
+            link: "",
             class: "pc"
           };
-        } else if (index === 8) {
+        }
+        else if (index === 8) {
           state.projectInfo = {
             title: "실시간 설비 데이터 모니터링/분석(FDC)",
             date: "2022.07 ~ 2022.11",
@@ -137,7 +138,7 @@ const store = () => {
               "JS API 사용(Kendo.js, Highcharts.js)"
             ],
             guitar: "화면뷰를 위해 개발하였던 UI를 가져와 더미데이터로 표현하였습니다.",
-            link: "http://msi-emb.com/",
+            link: "",
             class: "pc"
           };
         }

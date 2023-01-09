@@ -1,24 +1,19 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { normalizeURL, decode } from '@nuxt/ufo'
+import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _adbf6346 = () => interopDefault(import('..\\pages\\components\\contact.vue' /* webpackChunkName: "pages/components/contact" */))
-const _d4cc0f38 = () => interopDefault(import('..\\pages\\components\\main-section.vue' /* webpackChunkName: "pages/components/main-section" */))
-const _6eab50d6 = () => interopDefault(import('..\\pages\\components\\project.vue' /* webpackChunkName: "pages/components/project" */))
-const _58f7b350 = () => interopDefault(import('..\\pages\\components\\project-detail.vue' /* webpackChunkName: "pages/components/project-detail" */))
-const _60f37f28 = () => interopDefault(import('..\\pages\\components\\sub-section1.vue' /* webpackChunkName: "pages/components/sub-section1" */))
-const _60d75026 = () => interopDefault(import('..\\pages\\components\\sub-section2.vue' /* webpackChunkName: "pages/components/sub-section2" */))
-const _60bb2124 = () => interopDefault(import('..\\pages\\components\\sub-section3.vue' /* webpackChunkName: "pages/components/sub-section3" */))
-const _09194fb6 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _29b7c7c9 = () => interopDefault(import('..\\pages\\components\\contact.vue' /* webpackChunkName: "pages/components/contact" */))
+const _0e118278 = () => interopDefault(import('..\\pages\\components\\main-section.vue' /* webpackChunkName: "pages/components/main-section" */))
+const _217a6b7c = () => interopDefault(import('..\\pages\\components\\project.vue' /* webpackChunkName: "pages/components/project" */))
+const _0c417b6c = () => interopDefault(import('..\\pages\\components\\project-detail.vue' /* webpackChunkName: "pages/components/project-detail" */))
+const _47fdca80 = () => interopDefault(import('..\\pages\\components\\sub-section1.vue' /* webpackChunkName: "pages/components/sub-section1" */))
+const _480be201 = () => interopDefault(import('..\\pages\\components\\sub-section2.vue' /* webpackChunkName: "pages/components/sub-section2" */))
+const _4819f982 = () => interopDefault(import('..\\pages\\components\\sub-section3.vue' /* webpackChunkName: "pages/components/sub-section3" */))
+const _d11702de = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
 
-// TODO: remove in Nuxt 3
 const emptyFn = () => {}
-const originalPush = Router.prototype.push
-Router.prototype.push = function push (location, onComplete = emptyFn, onAbort) {
-  return originalPush.call(this, location, onComplete, onAbort)
-}
 
 Vue.use(Router)
 
@@ -31,62 +26,57 @@ export const routerOptions = {
 
   routes: [{
     path: "/components/contact",
-    component: _adbf6346,
+    component: _29b7c7c9,
     name: "components-contact"
   }, {
     path: "/components/main-section",
-    component: _d4cc0f38,
+    component: _0e118278,
     name: "components-main-section"
   }, {
     path: "/components/project",
-    component: _6eab50d6,
+    component: _217a6b7c,
     name: "components-project"
   }, {
     path: "/components/project-detail",
-    component: _58f7b350,
+    component: _0c417b6c,
     name: "components-project-detail"
   }, {
     path: "/components/sub-section1",
-    component: _60f37f28,
+    component: _47fdca80,
     name: "components-sub-section1"
   }, {
     path: "/components/sub-section2",
-    component: _60d75026,
+    component: _480be201,
     name: "components-sub-section2"
   }, {
     path: "/components/sub-section3",
-    component: _60bb2124,
+    component: _4819f982,
     name: "components-sub-section3"
   }, {
     path: "/",
-    component: _09194fb6,
+    component: _d11702de,
     name: "index"
   }],
 
   fallback: false
 }
 
-function decodeObj(obj) {
-  for (const key in obj) {
-    if (typeof obj[key] === 'string') {
-      obj[key] = decode(obj[key])
-    }
-  }
-}
+export function createRouter (ssrContext, config) {
+  const base = (config._app && config._app.basePath) || routerOptions.base
+  const router = new Router({ ...routerOptions, base  })
 
-export function createRouter () {
-  const router = new Router(routerOptions)
+  // TODO: remove in Nuxt 3
+  const originalPush = router.push
+  router.push = function push (location, onComplete = emptyFn, onAbort) {
+    return originalPush.call(this, location, onComplete, onAbort)
+  }
 
   const resolve = router.resolve.bind(router)
   router.resolve = (to, current, append) => {
     if (typeof to === 'string') {
       to = normalizeURL(to)
     }
-    const r = resolve(to, current, append)
-    if (r && r.resolved && r.resolved.query) {
-      decodeObj(r.resolved.query)
-    }
-    return r
+    return resolve(to, current, append)
   }
 
   return router
