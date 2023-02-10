@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { isSamePath as _isSamePath, joinURL, normalizeURL, withQuery, withoutTrailingSlash } from 'ufo'
+import { normalizeURL } from '@nuxt/ufo'
 
 // window.{{globals.loadedCallback}} hook
 // Useful for jsdom testing or plugins (https://github.com/tmpvar/jsdom#dealing-with-asynchronous-script-loading)
@@ -7,15 +7,6 @@ if (process.client) {
   window.onNuxtReadyCbs = []
   window.onNuxtReady = (cb) => {
     window.onNuxtReadyCbs.push(cb)
-  }
-}
-
-export function createGetCounter (counterObject, defaultKey = '') {
-  return function getCounter (id = defaultKey) {
-    if (counterObject[id] === undefined) {
-      counterObject[id] = 0
-    }
-    return counterObject[id]++
   }
 }
 
@@ -143,29 +134,7 @@ export function resolveRouteComponents (route, fn) {
     flatMapComponents(route, async (Component, instance, match, key) => {
       // If component is a function, resolve it
       if (typeof Component === 'function' && !Component.options) {
-        try {
-          Component = await Component()
-        } catch (error) {
-          // Handle webpack chunk loading errors
-          // This may be due to a new deployment or a network problem
-          if (
-            error &&
-            error.name === 'ChunkLoadError' &&
-            typeof window !== 'undefined' &&
-            window.sessionStorage
-          ) {
-            const timeNow = Date.now()
-            const previousReloadTime = parseInt(window.sessionStorage.getItem('nuxt-reload'))
-
-            // check for previous reload time not to reload infinitely
-            if (!previousReloadTime || previousReloadTime + 60000 < timeNow) {
-              window.sessionStorage.setItem('nuxt-reload', timeNow)
-              window.location.reload(true /* skip cache */)
-            }
-          }
-
-          throw error
-        }
+        Component = await Component()
       }
       match.components[key] = Component = sanitizeComponent(Component)
       return typeof fn === 'function' ? fn(Component, instance, match, key) : Component
@@ -199,18 +168,16 @@ export async function setContext (app, context) {
       store: app.store,
       payload: context.payload,
       error: context.error,
-      base: app.router.options.base,
+      base: '/portfolio/',
       env: {}
     }
     // Only set once
-
-    if (context.req) {
+    if (!process.static && context.req) {
       app.context.req = context.req
     }
-    if (context.res) {
+    if (!process.static && context.res) {
       app.context.res = context.res
     }
-
     if (context.ssrContext) {
       app.context.ssrContext = context.ssrContext
     }
@@ -238,7 +205,7 @@ export async function setContext (app, context) {
           status
         })
       } else {
-        path = withQuery(path, query)
+        path = formatUrl(path, query)
         if (process.server) {
           app.context.next({
             path,
@@ -608,6 +575,66 @@ function flags (options) {
   return options && options.sensitive ? '' : 'i'
 }
 
+/**
+ * Format given url, append query to url query string
+ *
+ * @param  {string} url
+ * @param  {string} query
+ * @return {string}
+ */
+function formatUrl (url, query) {
+  let protocol
+  const index = url.indexOf('://')
+  if (index !== -1) {
+    protocol = url.substring(0, index)
+    url = url.substring(index + 3)
+  } else if (url.startsWith('//')) {
+    url = url.substring(2)
+  }
+
+  let parts = url.split('/')
+  let result = (protocol ? protocol + '://' : '//') + parts.shift()
+
+  let path = parts.join('/')
+  if (path === '' && parts.length === 1) {
+    result += '/'
+  }
+
+  let hash
+  parts = path.split('#')
+  if (parts.length === 2) {
+    [path, hash] = parts
+  }
+
+  result += path ? '/' + path : ''
+
+  if (query && JSON.stringify(query) !== '{}') {
+    result += (url.split('?').length === 2 ? '&' : '?') + formatQuery(query)
+  }
+  result += hash ? '#' + hash : ''
+
+  return result
+}
+
+/**
+ * Transform data object to query string
+ *
+ * @param  {object} query
+ * @return {string}
+ */
+function formatQuery (query) {
+  return Object.keys(query).sort().map((key) => {
+    const val = query[key]
+    if (val == null) {
+      return ''
+    }
+    if (Array.isArray(val)) {
+      return val.slice().map(val2 => [key, '=', val2].join('')).join('&')
+    }
+    return key + '=' + val
+  }).filter(Boolean).join('&')
+}
+
 export function addLifecycleHook(vm, hook, fn) {
   if (!vm.$options[hook]) {
     vm.$options[hook] = []
@@ -617,11 +644,21 @@ export function addLifecycleHook(vm, hook, fn) {
   }
 }
 
-export const urlJoin = joinURL
+export function urlJoin () {
+  return [].slice
+    .call(arguments)
+    .join('/')
+    .replace(/\/+/g, '/')
+    .replace(':/', '://')
+}
 
-export const stripTrailingSlash = withoutTrailingSlash
+export function stripTrailingSlash (path) {
+  return path.replace(/\/+$/, '') || '/'
+}
 
-export const isSamePath = _isSamePath
+export function isSamePath (p1, p2) {
+  return stripTrailingSlash(p1) === stripTrailingSlash(p2)
+}
 
 export function setScrollRestoration (newVal) {
   try {

@@ -46,11 +46,11 @@ import emailjs from "emailjs-com";
 
 export default {
   methods: {
-    sendEmail: (e) => {
+    sendEmail: e => {
       if (
-        e.path[0][0].value === "" ||
-        e.path[0][1].value === "" ||
-        e.path[0][2].value === ""
+        e.target[0].value === "" ||
+        e.target[1].value === "" ||
+        e.target[2].value === ""
       ) {
         alert("공백을 채워주세요!");
       } else {
@@ -62,17 +62,17 @@ export default {
             "user_mrPFHtVDlQimcAtxWCbaK"
           )
           .then(
-            (result) => {
+            result => {
               console.log("SUCCESS!", result.status, result.text);
               alert("전송이 완료되었습니다 감사합니다^-^");
             },
-            (error) => {
+            error => {
               console.log("FAILED...", error);
               alert("전송에 실패하였습니다. 다시 시도해주세요!");
             }
           );
       }
-    },
-  },
+    }
+  }
 };
 </script>
