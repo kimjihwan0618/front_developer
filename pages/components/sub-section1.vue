@@ -114,21 +114,21 @@ export default {
           title: "UI Development",
           number: "01",
           text:
-            "웹 퍼블리싱(HTML, CSS, Jquery, JS)에 대한 이해도가 높습니다. 유지보수를 고려한 코드 작성, Jquery 플러그인 활용 경험으로, 효율적인 퍼블리싱을 할 수 있습니다.",
+            "기본 퍼블리싱(HTML, CSS, JS)에 대한 이해도가 높습니다. 다양한 프레임워크를 사용한 경험으로 유지보수를 고려하고, 효율적인 코드를 작성할 수 있습니다.",
           img: require("@/assets/images/about/me1.png")
         },
         {
           title: "UI/UX Design",
           number: "02",
           text:
-            "개발자로서 나아가기 위해 공부하지만, UI/UX 디자인에 흥미가많아서, 트렌디한 디자인을 찾으면 XD로 카피해보면서 디자인 공부를 하고 있습니다.",
+            "프론트엔드 개발자로서 나아가기 위해 최신 UI/UX 디자인을 관심있게 찾아보고, 디자인툴(XD, Figma)로 카피해보는 경험을 즐기고 좋아합니다.",
           img: require("@/assets/images/about/me2.png")
         },
         {
           title: "My Character",
           number: "03",
           text:
-            "다양하게 개발할수 있는 경험을 좋아합니다. 프로젝트들을 하면서, 해보지 않았던 기능을 구현하는데에 있어서 만족감을 느끼고, 다양하게 배우는 것을 좋아합니다.",
+            "새로운 것을 찾아보고 적용하는 과정에서 성취감을 느끼고, 해보지 않았던 기능을 구현하는데에 있어서 만족감을 느낍니다.",
           img: require("@/assets/images/about/me3.png")
         }
       ],

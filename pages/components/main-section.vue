@@ -55,11 +55,11 @@ export default {
       next.classList.add("current");
     },
     start1() {
-      setInterval(this.start2, 1350);
-    },
+      setInterval(this.start2, 1250);
+    }
   },
   mounted() {
     this.start1();
-  },
+  }
 };
 </script>

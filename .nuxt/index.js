@@ -14,6 +14,7 @@ import { createStore } from './store.js'
 /* Plugins */
 
 import nuxt_plugin_plugin_521a818a from 'nuxt_plugin_plugin_521a818a' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_lottievueplayerclient_606d85c4 from 'nuxt_plugin_lottievueplayerclient_606d85c4' // Source: ..\\plugins\\lottie-vue-player.client.js (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -204,6 +205,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_521a818a === 'function') {
     await nuxt_plugin_plugin_521a818a(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_lottievueplayerclient_606d85c4 === 'function') {
+    await nuxt_plugin_lottievueplayerclient_606d85c4(app.context, inject)
   }
 
   // Lock enablePreview in context

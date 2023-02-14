@@ -23,7 +23,7 @@
       </ul>
       <ul class="sns-wrap">
         <li>
-          <a href="https://open.kakao.com/o/sFJtxOXe" target="_blank">
+          <a href="https://open.kakao.com/o/sIEBFo4e" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.362 35.362">
               <g
                 id="그룹_3"
@@ -101,8 +101,8 @@ export default {
         { name: "CAREER", link: "?section=career" },
         { name: "SKILL", link: "?section=skill" },
         { name: "PROJECT", link: "?section=project" },
-        { name: "CONTACT", link: "?section=contact" },
-      ],
+        { name: "CONTACT", link: "?section=contact" }
+      ]
     };
   },
   methods: {
@@ -114,16 +114,16 @@ export default {
     },
     scrollTop() {
       window.scrollTo({ top: 0 });
-    },
+    }
   },
   created() {
-    this.$nuxt.$on("navChange", (index) => {
-      this.$refs.navLink.map((navArr) => {
+    this.$nuxt.$on("navChange", index => {
+      this.$refs.navLink.map(navArr => {
         navArr.$el.classList.remove("nuxt-link-exact-active");
       });
       this.$refs.navLink[index].$el.classList.add("nuxt-link-exact-active");
     });
-  },
+  }
   // mounted() {
   //   this.$emit("navActive", this.$refs.navTitle);
   // }

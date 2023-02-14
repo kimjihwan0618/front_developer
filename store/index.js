@@ -1,7 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
+// import LottieVuePlayer from "@lottiefiles/vue-lottie-player";
 
 Vue.use(Vuex);
+// Vue.use(LottieVuePlayer);
 
 const store = () => {
   return new Vuex.Store({
@@ -114,7 +116,7 @@ const store = () => {
             title: "UBI-PLUS 디지털 치료제",
             date: "2022.01 ~ 2022.08",
             info: "디지털 치료제 관리자(의사) 페이지 제작",
-            lang: "Html, Css, Javascirpt, Vue",
+            lang: "Html, Css, Javascript, Vue",
             work: [
               "퍼블리싱(100%)",
               "디자인(100%)",
@@ -122,16 +124,16 @@ const store = () => {
               "JS API 사용(Chart.js, Grid.js, Canlandar.js)"
             ],
             guitar: "화면뷰를 위해 개발하였던 UI를 가져와 더미데이터로 표현하였습니다.",
-            link: "",
+            link: "https://kimajksldq.github.io/ubcure/",
             class: "pc"
           };
         }
         else if (index === 8) {
           state.projectInfo = {
             title: "실시간 설비 데이터 모니터링/분석(FDC)",
-            date: "2022.07 ~ 2022.11",
-            info: "실시간 이상감지 화면 및 Back-End 기능개발",
-            lang: "Html, Css, Javascirpt, Python, MySQL, RabbiltMQ",
+            date: "2022.05 ~ 2022.12",
+            info: "실시간 이상감지 시스템 Front-End 및 Back-End 기능개발",
+            lang: "Html, Css, Javascirpt, Python, MySQL, RabbitMQ",
             work: [
               'Front-End(100%)',
               'Back-End(100%)',

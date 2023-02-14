@@ -12,6 +12,7 @@
     "deploy": "npm run generate && gh-pages -d dist"
   },
   "dependencies": {
+    "@lottiefiles/vue-lottie-player": "^1.1.0",
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
     "gh-pages": "^3.2.0",

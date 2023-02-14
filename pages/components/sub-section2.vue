@@ -46,7 +46,7 @@
           </p>
           <a href="#">
             <span class="name">(주)흰곰</span>
-            <span class="date">2020.11 ~2021.07</span>
+            <span class="date">2020.10 ~2021.07</span>
             <div class="bottom">
               <span class="job">웹 퍼블리셔</span>
               <span class="text"
@@ -64,7 +64,7 @@
             <span class="name">(주)엠에쓰아이</span>
             <span class="date">2021.07 ~</span>
             <div class="bottom">
-              <span class="job">웹개발자</span>
+              <span class="job">웹 개발자</span>
               <span class="text"
                 >자사 솔루션 디자인 및 서비스 개발. 외부 SI 프로젝트.</span
               >
@@ -83,7 +83,7 @@ export default {
       date: new Date(),
       firstCareer: new Date(2020, 6, 1),
       diffText: Number,
-      nowText: String,
+      nowText: String
     };
   },
   mounted() {
@@ -96,6 +96,6 @@ export default {
     let currDay = 24 * 60 * 60 * 1000; //시 * 분 * 초 * 밀리세컨
     let currMonth = currDay * 30; // 월 만듬
     this.diffText = parseInt(diff / currMonth);
-  },
+  }
 };
 </script>

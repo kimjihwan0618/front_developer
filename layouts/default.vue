@@ -24,6 +24,9 @@ export default {
     MobileBar,
     Footer
   },
+  mounted() {
+    console.log(this);
+  },
   created() {
     this.$nuxt.$on("projectClick", () => {
       this.$refs.modalBg.classList.add("on");
