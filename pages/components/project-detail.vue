@@ -41,10 +41,14 @@
               </dd>
             </dl>
           </li>
-          <li class="list">
+          <li class="list" v-if="projectInfo.guitar !== ''">
             <dl>
               <dt>기타 사항</dt>
-              <dd>{{ projectInfo.guitar }}</dd>
+              <dd>
+                <ul v-for="list in projectInfo.guitar" :key="list">
+                  <li>{{ list }}</li>
+                </ul>
+              </dd>
             </dl>
           </li>
         </ul>
@@ -74,15 +78,15 @@ export default {
   computed: {
     projectInfo() {
       return this.$store.state.projectInfo;
-    },
+    }
   },
   created() {
-    this.$nuxt.$on("projectClick", (index) => {});
+    this.$nuxt.$on("projectClick", index => {});
   },
   methods: {
     removeProPop() {
       this.$nuxt.$emit("removeProPop", "removeProPop");
-    },
-  },
+    }
+  }
 };
 </script>

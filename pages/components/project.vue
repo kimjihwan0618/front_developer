@@ -88,7 +88,7 @@ export default {
           img: require("@/assets/images/project/project6.png"),
           title: "ONIONEV BATTERY CMS",
           text:
-            "전기오토바이 바떼리 충전 대시보드(관리자페이지) 프로젝트 퍼블리싱, 디자인",
+            "전기오토바이 바떼리 충전 대시보드(관리자페이지) 프로젝트 퍼블리싱, 디자인, 일부 프론트엔드 기능 지원.",
           tag: ["#Web Design", "#Publishing", "#Dashboard"]
         },
         {
@@ -106,18 +106,17 @@ export default {
           ]
         },
         {
-          img: "",
+          img: require("@/assets/images/project/project8.png"),
           title: "MSI",
           text: "웹디자인과 앱 반응형 퍼블리싱",
           tag: ["#반응형", "#웹디자인", "#Publishing", "#Swiper"]
         },
         {
-          img: "",
+          img: require("@/assets/images/project/project9.png"),
           title: "UBI-PLUS 디지털 치료제",
           text: "웹디자인, 웹앱 반응형 퍼블리싱 및 프런트엔드 기능 구현",
           tag: [
             "#웹디자인",
-            "#Publishing",
             "#Front-End",
             "#Grid.js",
             "#Chart.js",
@@ -125,7 +124,7 @@ export default {
           ]
         },
         {
-          img: "",
+          img: require("@/assets/images/project/project10.jpg"),
           title: "실시간 설비 데이터 모니터링/분석(FDC)",
           text: "실시간 설비 공정데이터 진단, 모니터링 화면 및 기능개발",
           tag: [

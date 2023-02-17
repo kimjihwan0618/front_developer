@@ -7,7 +7,9 @@
       <h4>About Career</h4>
       <p class="today-date-txt">
         <span class="today">{{ nowText }}</span>
-        <span class="total-career">경력 {{ diffText }}개월</span>
+        <span class="total-career"
+          >경력 {{ Math.floor(diffText / 12) }}년 {{ diffText % 12 }}개월</span
+        >
       </p>
     </div>
     <div class="about-box">

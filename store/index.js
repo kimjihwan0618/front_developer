@@ -19,7 +19,7 @@ const store = () => {
             info: "웹&앱UI/UX디자인, 퍼블리싱 기초",
             lang: "Html, Css, Javascript, Vue",
             work: ["디자인(100%)", "퍼블리싱(100%)"],
-            guitar: "PC크기에 맞게 제작된 포트폴리오입니다.",
+            guitar: ["1. PC크기에 맞게 제작된 포트폴리오입니다."],
             link: "https://kimjihwan0618.github.io/pub_project/Web/portfolio",
             class: "pc"
           };
@@ -34,7 +34,7 @@ const store = () => {
               "'SHIFT'앱에 사용되는 템플릿 디자인 및 퍼블리싱",
               "카드뉴스 & SNS 배너 디자인"
             ],
-            guitar: "웹&앱 디자이너로 재직.",
+            guitar: ["1. 웹&앱 디자이너로 재직."],
             link: "http://www.jejecomms.com/",
             class: "none"
           };
@@ -49,7 +49,7 @@ const store = () => {
               "프론트엔드(30%)",
               "JS API 사용(Swiper.js)"
             ],
-            guitar: "PlayStore 정식 출시",
+            guitar: ["1. PlayStore 출시", "2. 화면 View를 위해 더미데이터 사용", "3. 최초 배포된 디자인"],
             link:
               "https://kimjihwan0618.github.io/pub_project/App/changepoint/splash",
             class: "none"
@@ -65,7 +65,7 @@ const store = () => {
               "디자인(100%)",
               "JS API 사용(Chart.js, datepicker.js)"
             ],
-            guitar: "PlayStore 정식 출시",
+            guitar: ["1. PlayStore 출시", "2. 화면 View를 위해 더미데이터 사용"],
             link:
               "https://kimjihwan0618.github.io/pub_project/App/h.STORE/login",
             class: "none"
@@ -77,7 +77,7 @@ const store = () => {
             info: "전기오토바이 충전소를 상태관리하는 관리자페이지",
             lang: "Html, Css, Jquery, Javascirpt, Spring Boot",
             work: ["퍼블리싱(100%)", "디자인(100%)"],
-            guitar: "모바일을 제외한 태블릿까지 지원되는 사이즈입니다.",
+            guitar: ["1. 모바일을 제외한 태블릿까지 지원되는 사이즈입니다.", "2. 화면 View를 위해 더미데이터 사용"],
             link:
               "https://kimjihwan0618.github.io/pub_project/Web/onionev/dashboard",
             class: "pc"
@@ -89,10 +89,11 @@ const store = () => {
             info: "(주)흰곰 회사 홈페이지 제작",
             lang: "Html, Css, Javascirpt, Vue",
             work: [
+              "디자인(100%)",
               "퍼블리싱(100%)",
-              "디자인(100%)"
+              "프론트엔드(30%)"
             ],
-            guitar: "Vue3와 Nuxt를 사용한 환경에 제작",
+            guitar: ["Vue3와 Nuxt를 사용한 환경에 제작"],
             link: "https://www.hingomwave.com/",
             class: "none"
           };
@@ -118,12 +119,11 @@ const store = () => {
             info: "디지털 치료제 관리자(의사) 페이지 제작",
             lang: "Html, Css, Javascript, Vue",
             work: [
-              "퍼블리싱(100%)",
               "디자인(100%)",
               'Front-End(100%)',
               "JS API 사용(Chart.js, Grid.js, Canlandar.js)"
             ],
-            guitar: "화면뷰를 위해 개발하였던 UI를 가져와 더미데이터로 표현하였습니다.",
+            guitar: ["1. 화면 View를 위해 더미데이터 사용"],
             link: "https://kimajksldq.github.io/ubcure/",
             class: "pc"
           };
@@ -133,13 +133,13 @@ const store = () => {
             title: "실시간 설비 데이터 모니터링/분석(FDC)",
             date: "2022.05 ~ 2022.12",
             info: "실시간 이상감지 시스템 Front-End 및 Back-End 기능개발",
-            lang: "Html, Css, Javascirpt, Python, MySQL, RabbitMQ",
+            lang: "Html, Css, Javascirpt, Python, Django, MySQL, RabbitMQ",
             work: [
               'Front-End(100%)',
               'Back-End(100%)',
               "JS API 사용(Kendo.js, Highcharts.js)"
             ],
-            guitar: "화면뷰를 위해 개발하였던 UI를 가져와 더미데이터로 표현하였습니다.",
+            guitar: "",
             link: "",
             class: "pc"
           };
