@@ -38,9 +38,9 @@ export default {
       projectArr: [
         {
           img: require("@/assets/images/project/project1.png"),
-          title: "컴퓨터학원 포트폴리오",
+          title: "웹/앱 퍼블리싱 & 프론트엔드 교육수료",
           text:
-            "웹, 앱, UI/UX디자인, 퍼블리싱 교육과정에서 배운 전체내용을 바탕으로 포트폴리오 제작",
+            "웹, 앱, UI/UX디자인, 퍼블리싱, 프론트엔드 교육과정에서 배운 전체내용을 바탕으로 포트폴리오 제작",
           tag: [
             "#Web Standard",
             "#Responsive",
@@ -50,52 +50,47 @@ export default {
         },
         {
           img: require("@/assets/images/project/project2.png"),
-          title: "웹 & 앱 UI/UX 디자인",
+          title: "SHFIT",
           text:
-            "(주)제제컴즈의 주 사업인 모바일명함 SHIFT를 UI/UX 디자인 및 자사 홈페이지 관리",
+            "모바일 명함을 이용한 대면/비대면 글로벌인맥형성관리 통합플랫폼서비스",
           tag: ["#UI/UX Design", "#SNS배너 다자인", "#웹 디자이너"]
         },
         // { img : require('@/assets/images/project/project3.png'), title : "찐 디자인", text : '(주)제제컴즈의 당시 프로젝트 추진중이였던 배달앱 UI/UX 디자인', tag : ['#UI/UX Design', '#App Design', '#UI/UX Design', '#웹 디자이너']},
         {
           img: require("@/assets/images/project/project4.png"),
           title: "동전환전소",
-          text:
-            "하이브리드앱 퍼블리싱, Spring Boot 기능을 사용 일부 프론트엔드 기능 지원",
+          text: "외국 동전 지폐를 간편하게 환전할 수 있는 동전환전소 서비스",
           tag: [
             "#하이브리드 앱",
             "#Front-end",
             "#Publishing",
             "#Spring Boot",
-            "#환전앱",
+            "#환전서비스",
             "#Swiper"
           ]
         },
         {
           img: require("@/assets/images/project/project5.png"),
           title: "h.STORE",
-          text:
-            "하이브리드앱 퍼블리싱, Spring Boot 기능을 사용하여, 일부 프론트엔드 기능 지원",
+          text: "POS에 저장된 데이터를 볼수있는 대시보드앱",
           tag: [
             "#하이브리드 앱",
             "#Front-end",
             "#Publishing",
             "#Spring Boot",
-            "#매출조회앱",
-            "#Canlander"
+            "#POS 데이터 조회"
           ]
         },
         {
           img: require("@/assets/images/project/project6.png"),
           title: "ONIONEV BATTERY CMS",
-          text:
-            "전기오토바이 바떼리 충전 대시보드(관리자페이지) 프로젝트 퍼블리싱, 디자인, 일부 프론트엔드 기능 지원.",
+          text: "전기오토바이 충전소를 상태관리하는 관리자페이지",
           tag: ["#Web Design", "#Publishing", "#Dashboard"]
         },
         {
           img: require("@/assets/images/project/project7.png"),
           title: "h.WAVE",
-          text:
-            "웹디자인과 Vue 3 를 사용한 웹앱 퍼블리싱 및 프런트엔드 기능 구현",
+          text: "(주)흰곰 회사 홈페이지 제작",
           tag: [
             "#Vue.js",
             "#Nuxt.js",
@@ -108,25 +103,19 @@ export default {
         {
           img: require("@/assets/images/project/project8.png"),
           title: "MSI",
-          text: "웹디자인과 앱 반응형 퍼블리싱",
+          text: "(주)엠에쓰아이 회사  홈페이지 제작",
           tag: ["#반응형", "#웹디자인", "#Publishing", "#Swiper"]
         },
         {
           img: require("@/assets/images/project/project9.png"),
           title: "UBI-PLUS 디지털 치료제",
-          text: "웹디자인, 웹앱 반응형 퍼블리싱 및 프런트엔드 기능 구현",
-          tag: [
-            "#웹디자인",
-            "#Front-End",
-            "#Grid.js",
-            "#Chart.js",
-            "#Drag & Drop"
-          ]
+          text: "디지털 치료제 환자(앱) 상태를 관리하는 관리자페이지 개발",
+          tag: ["#웹디자인", "#퍼블리싱", "#Front-End", "Vue", "Vuex"]
         },
         {
           img: require("@/assets/images/project/project10.jpg"),
           title: "실시간 설비 데이터 모니터링/분석(FDC)",
-          text: "실시간 설비 공정데이터 진단, 모니터링 화면 및 기능개발",
+          text: "실시간 설비 공정데이터 진단, 모니터링 화면 개발",
           tag: [
             "#Front-End",
             "#Back-End",
@@ -134,6 +123,19 @@ export default {
             "#Python",
             "#Django",
             "MariaDB"
+          ]
+        },
+        {
+          img: require("@/assets/images/project/project11.jpg"),
+          title: "BSS-SERVER",
+          text: "배터리 스테이션 원격 관리 시스템 프론트엔드 개발",
+          tag: [
+            "#React",
+            "#Redux",
+            "#웹디자인",
+            "#Publishing",
+            "#Front-End",
+            "#반응형"
           ]
         }
       ]
