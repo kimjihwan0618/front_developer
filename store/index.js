@@ -12,7 +12,7 @@ const store = () => {
     },
     mutations: {
       THIS_PROJECT(state, index) {
-        if (index === 0) {
+        if (index === 9) {
           state.projectInfo = {
             title: "웹/앱 퍼블리싱 & 프론트엔드 교육수료",
             date: "2020.01 ~ 2020.07",
@@ -23,7 +23,7 @@ const store = () => {
             link: "https://kimjihwan0618.github.io/pub_project/Web/portfolio",
             class: "pc"
           };
-        } else if (index === 1) {
+        } else if (index === 8) {
           state.projectInfo = {
             title: "SHIFT",
             date: "2020.07 ~ 2020.10",
@@ -38,7 +38,7 @@ const store = () => {
             link: "http://www.jejecomms.com/",
             class: "none"
           };
-        } else if (index === 2) {
+        } else if (index === 7) {
           state.projectInfo = {
             title: "동전환전소",
             date: "2020.11 ~ 2020.12",
@@ -54,7 +54,7 @@ const store = () => {
               "https://kimjihwan0618.github.io/pub_project/App/changepoint/splash",
             class: "none"
           };
-        } else if (index === 3) {
+        } else if (index === 6) {
           state.projectInfo = {
             title: "h.STORE",
             date: "2021.01 ~ 2021.03",
@@ -70,7 +70,7 @@ const store = () => {
               "https://kimjihwan0618.github.io/pub_project/App/h.STORE/login",
             class: "none"
           };
-        } else if (index === 4) {
+        } else if (index === 5) {
           state.projectInfo = {
             title: "ONIONEV BATTERY CMS",
             date: "2021.03 ~ 2021.04",
@@ -82,7 +82,7 @@ const store = () => {
               "https://kimjihwan0618.github.io/pub_project/Web/onionev/dashboard",
             class: "pc"
           };
-        } else if (index === 5) {
+        } else if (index === 4) {
           state.projectInfo = {
             title: "h.WAVE",
             date: "2021.04 ~ 2021.06",
@@ -97,7 +97,7 @@ const store = () => {
             link: "https://www.hingomwave.com/",
             class: "none"
           };
-        } else if (index === 6) {
+        } else if (index === 3) {
           state.projectInfo = {
             title: "MSI",
             date: "2021.07 ~ 2021.08",
@@ -112,7 +112,7 @@ const store = () => {
             link: "http://msi-emb.com/",
             class: "none"
           };
-        } else if (index === 7) {
+        } else if (index === 2) {
           state.projectInfo = {
             title: "UBI-PLUS 디지털 치료제",
             date: "2022.01 ~ 2022.08",
@@ -128,7 +128,7 @@ const store = () => {
             class: "pc"
           };
         }
-        else if (index === 8) {
+        else if (index === 1) {
           state.projectInfo = {
             title: "실시간 설비 데이터 모니터링/분석(FDC)",
             date: "2022.05 ~ 2022.12",
@@ -144,7 +144,7 @@ const store = () => {
             class: "pc"
           };
         }
-        else if (index === 9) {
+        else if (index === 0) {
           state.projectInfo = {
             title: "BSS-SERVER",
             date: "2022.12 ~ ",
