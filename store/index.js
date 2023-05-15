@@ -124,7 +124,7 @@ const store = () => {
               "UI 라이브러리(Chart.js, Grid.js, Canlandar.js ...)"
             ],
             guitar: ["1. 화면 View를 위해 더미데이터 사용"],
-            link: "https://kimajksldq.github.io/ubcure/",
+            link: "https://kimjihwan0618.github.io/ubcure/",
             class: "pc"
           };
         }
@@ -157,7 +157,7 @@ const store = () => {
               "UI 라이브러리(gridjs, charts.js, calendar.js ...)"
             ],
             guitar: "",
-            link: "https://kimajksldq.github.io/bss_server/dashboard",
+            link: "https://kimjihwan0618.github.io/bss_server/dashboard",
             class: "none"
           };
         }
