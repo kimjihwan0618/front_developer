@@ -1,0 +1,144 @@
+header {
+  width: 100%;
+  height: 82px;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 15;
+  background-color: white;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.16);
+}
+
+header #nav-icon1 {
+  display: none;
+}
+
+header .header-inner {
+  width: 82%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .header-inner h1.logo {
+  cursor: pointer;
+}
+
+header .header-inner ul.gnb {
+  display: flex;
+}
+
+header .header-inner ul.gnb li {
+  margin: 0 26px;
+}
+
+header .header-inner ul.gnb li a {
+  font-size: 1.4rem;
+  color: #828282;
+  -webkit-transition: all 0.1s ease-in 0s;
+}
+
+header .header-inner ul.gnb li a.nuxt-link-exact-active {
+  color: #959ad5;
+}
+
+header .header-inner ul.gnb li a:hover {
+  color: #959ad5;
+}
+
+header .header-inner ul.sns-wrap {
+  display: flex;
+}
+
+header .header-inner ul.sns-wrap a {
+  display: inline-block;
+}
+
+header .header-inner ul.sns-wrap a svg {
+  width: 35.362px;
+  height: 35.362px;
+}
+
+header .header-inner ul.sns-wrap path {
+  -webkit-transition: all 0.1s linear 0s;
+}
+
+header .header-inner ul.sns-wrap li:nth-of-type(2) {
+  margin-left: 32px;
+}
+
+header .header-inner ul.sns-wrap li:nth-of-type(1):hover .kakaocolor {
+  fill: #f7e600;
+}
+
+header .header-inner ul.sns-wrap li:nth-of-type(2):hover .githubcolor {
+  fill: black;
+}
+
+@media screen and (max-width: 1200px) {
+  header .header-inner h1.logo {
+    font-size: 2.4rem;
+  }
+
+  header .header-inner ul.gnb {
+    display: flex;
+  }
+
+  header .header-inner ul.gnb li {
+    margin: 0 16px;
+  }
+
+  header .header-inner ul.sns-wrap {
+    display: flex;
+  }
+
+  header .header-inner ul.sns-wrap a svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  header .header-inner ul.sns-wrap li:nth-of-type(2) {
+    margin-left: 26px;
+  }
+
+  header .header-inner ul.sns-wrap li:nth-of-type(1):hover .kakaocolor {
+    fill: #f7e600;
+  }
+
+  header .header-inner ul.sns-wrap li:nth-of-type(2):hover .githubcolor {
+    fill: black;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  header #nav-icon1 {
+    display: flex;
+  }
+
+  header .header-inner {
+    width: 90%;
+  }
+
+  header .header-inner h1.logo {
+    font-size: 2.4rem;
+  }
+
+  header .header-inner ul.gnb {
+    display: none;
+  }
+
+  header .header-inner ul.gnb li {
+    margin: 0 22px;
+  }
+
+  header .header-inner ul.gnb li a {
+    font-size: 1.6rem;
+    color: #828282;
+  }
+
+  header .header-inner ul.sns-wrap {
+    display: none;
+  }
+}
