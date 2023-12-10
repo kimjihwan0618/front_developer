@@ -41,11 +41,11 @@ header .header-inner ul.gnb li a {
 }
 
 header .header-inner ul.gnb li a.nuxt-link-exact-active {
-  color: #959ad5;
+  color: var(--main--second-color);
 }
 
 header .header-inner ul.gnb li a:hover {
-  color: #959ad5;
+  color: var(--main--second-color);
 }
 
 header .header-inner ul.sns-wrap {

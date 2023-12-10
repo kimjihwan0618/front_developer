@@ -113,9 +113,10 @@
 }
 
 :root {
-  --main-color: #e1e3f8;
-  --main--second-color: #959ad5;
-  --main--btn-color: #c0c3e8;
+  /* #e1e3f8,  #959ad5*/
+  --main-color: #2F6DBE;
+  --main--second-color: #7195C5;
+  --main-color3: #97B1D4;
   --box-shdow: 6px 6px 12px rgba(0, 0, 0, 0.35);
   --text-color: #3d3d3d;
 }
@@ -212,7 +213,7 @@
   position: absolute;
   width: 3.5px;
   height: 80%;
-  background-color: var(--main--btn-color);
+  background-color: var(--main-color);
   left: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -295,7 +296,7 @@
   position: relative;
   width: 82%;
   height: 750px;
-  border-bottom: 1px solid #7d8ad8;
+  border-bottom: 1px solid var(--main-color);
 }
 
 .container main .main-section img {
@@ -367,7 +368,7 @@
   box-shadow: 0 39px 67px 3px HSL(0deg 0% 67%/20%);
   width: 100%;
   height: 452px;
-  background-color: #e1e3f8;
+  background-color: var(--main-color);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -405,7 +406,7 @@
   flex-direction: column;
   height: 81px;
   overflow: hidden;
-  border: 4px solid #e1e3f8;
+  border: 4px solid var(--main-color3);
   border-radius: 8px;
 }
 
@@ -576,7 +577,7 @@
   display: inline-block;
   color: var(--text-color);
   font-family: "NotoSansKR-Midium";
-  border-bottom: 3px solid #bcbee8;
+  border-bottom: 3px solid var(--main-color3);
   padding-bottom: 5px;
   display: inline-block;
   font-weight: 500;
@@ -617,7 +618,7 @@
   height: 10px;
   left: 0;
   top: 0;
-  background-color: var(--main--btn-color);
+  background-color: var(--main-color3);
   border-radius: 100%;
   -webkit-transition: all 0.2s linear 0s;
 }
@@ -724,7 +725,15 @@
 }
 
 .container main .sub-section .about-me-box .right .slide-btn span:hover g {
-  fill: #959ad5;
+  fill: var(--main--second-color);
+}
+
+.container main .sub-section .about-me-box .right .slide-btn span path {
+  fill: var(--main-color3);
+}
+
+.container main .sub-section .about-me-box .right .slide-btn span path circle {
+  stroke: var(--main-color3);
 }
 
 .container main .sub-section .about-me-box .right .slide-btn span:hover path {
@@ -787,7 +796,7 @@
   width: 90%;
   height: 100%;
   -webkit-transition: all 0.5s ease 0s;
-  background: linear-gradient(#f3f3fa, #b0b4df);
+  background: linear-gradient(to right, var(--main-color3), var(--main-color));
   border-radius: 12px;
 }
 
@@ -909,7 +918,7 @@
 }
 
 .container .sub-section.project .project-wrap .project-item .right h4 {
-  border-bottom: 2px solid #d9daec;
+  border-bottom: 2px solid var(--main-color3);
   padding-bottom: 5px;
   color: var(--text-color);
   font-size: 2.4rem;
@@ -939,8 +948,8 @@
 }
 
 .container .sub-section.project .project-wrap .project-item .right span:hover {
-  background-color: #959ad5;
-  border: 1px solid #959ad5;
+  background-color: var(--main--second-color);
+  border: 1px solid var(--main--second-color);
   color: white;
 }
 
@@ -1050,31 +1059,37 @@
   height: 50px;
   box-sizing: border-box;
   padding: 0 4%;
-  border-top: 1px solid #9498e1;
+  border-top: 1px solid var(--main--second-color);
   background-color: #f8f8f8;
 }
 
 .container .sub-section.contact .contact-wrap .left li:nth-of-type(1) {
   float: left;
-  width: 46%;
+  width: 48.5%;
 }
 
 .container .sub-section.contact .contact-wrap .left li:nth-of-type(2) {
   float: right;
-  width: 46%;
+  width: 48.5%;
 }
 
 .container .sub-section.contact .contact-wrap .left li:nth-of-type(3) {
   float: left;
-  width: 100%;
+  width: 48.5%;
   margin-top: 50px;
 }
 
-.container .sub-section.contact .contact-wrap .left li:nth-of-type(3) textarea {
+.container .sub-section.contact .contact-wrap .left li:nth-of-type(4) {
+  float: right;
+  width: 48.5%;
+  margin-top: 50px;
+}
+
+.container .sub-section.contact .contact-wrap .left li:nth-of-type(4) textarea {
   border: none;
   outline: none;
   resize: none;
-  border-top: 1px solid #9498e1;
+  border-top: 1px solid var(--main--second-color);
   background-color: #f8f8f8;
   box-sizing: border-box;
   padding: 2% 1.9%;
@@ -1122,9 +1137,9 @@
 }
 
 .container .sub-section.contact .submit-btn:hover {
-  background-color: #959ad5;
+  background-color: var(--main--second-color);
   color: white;
-  border: 1px solid #959ad5;
+  border: 1px solid var(--main--second-color);
 }
 
 @media screen and (max-width: 1500px) {

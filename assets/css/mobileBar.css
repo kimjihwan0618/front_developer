@@ -51,12 +51,12 @@
 }
 
 .mobile-nav ul li a.nuxt-link-exact-active {
-  background-color: #e1e3f8;
+  background-color: var(--main-color);
   color: white;
 }
 
 .mobile-nav ul li:hover {
-  background-color: #e1e3f8;
+  background-color: var(--main-color);
 }
 
 .mobile-nav ul li:hover a {
