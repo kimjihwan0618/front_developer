@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/components/sub-section1", {data:[{}],fetch:{},mutations:[]});

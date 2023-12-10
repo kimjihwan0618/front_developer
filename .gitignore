@@ -4,3 +4,5 @@ node_modules/
 
 # package-lock.json 파일 제외
 package-lock.json
+
+.dist/
