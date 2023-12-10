@@ -1,8 +1,8 @@
 export default {
   target: "static",
-  // router: {
-  //   base: "/portfolio/"
-  // },
+  router: {
+    base: "/portfolio/"
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: "김지환 포트폴리오",

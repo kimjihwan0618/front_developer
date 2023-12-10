@@ -22,7 +22,7 @@
               <input type="email" calss="email" name="user_email" />
             </li>
             <li>
-              <label for="phone">폰번호</label>
+              <label for="phone">휴대폰 번호</label>
               <input type="phone" calss="phone" name="user_phone" />
             </li>
             <li>
@@ -33,7 +33,7 @@
         </div>
         <div class="right">
           <dl>
-            <dt>폰번호 :&nbsp;</dt>
+            <dt>휴대폰 번호 :&nbsp;</dt>
             <dd>&nbsp;010-5838-5146</dd>
           </dl>
           <dl>
@@ -156,7 +156,7 @@ export default {
             this.$refs.loadingWrap.classList.remove("on");
           }
         } else {
-          alert("폰번호를 확인해주세요!");
+          alert("휴대폰 번호를 확인해주세요!");
         }
       }
     }
