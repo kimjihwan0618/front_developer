@@ -480,6 +480,10 @@
   background-color: #2f528f;
 }
 
+.container main .sub-section.right .about-box ul li:nth-of-type(5) {
+  background-color: #E53123;
+}
+
 .container main .sub-section.right .about-box ul li:hover a {
   opacity: 1;
 }
@@ -796,7 +800,7 @@
   width: 90%;
   height: 100%;
   -webkit-transition: all 0.5s ease 0s;
-  background: linear-gradient(to right, var(--main-color3), var(--main-color));
+  background: linear-gradient(to right, var(--main-color3), var(--main--second-color));
   border-radius: 12px;
 }
 

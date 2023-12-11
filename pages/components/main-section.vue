@@ -20,8 +20,7 @@
               <span class="item">끊임없이 도전하는</span>
               <span class="item">스스로 문제를 찾는</span>
               <span class="item prev">UI/UX에 흥미가 많은</span>
-            </span> </span
-          >&nbsp;개발자
+            </span> </span>&nbsp;개발자
         </p>
         <p>김지환입니다.</p>
       </div>
@@ -55,7 +54,7 @@ export default {
       next.classList.add("current");
     },
     start1() {
-      setInterval(this.start2, 1250);
+      setInterval(this.start2, 2000);
     }
   },
   mounted() {
