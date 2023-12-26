@@ -5,10 +5,6 @@
     </div>
     <div class="section-sub-title">
       <h4>About Career</h4>
-      <p class="today-date-txt">
-        <span class="today">{{ nowText }}</span>
-        <span class="total-career">경력 {{ Math.floor(diffText / 12) }}년 {{ diffText % 12 }}개월</span>
-      </p>
     </div>
     <div class="about-box">
       <ul>
@@ -20,7 +16,7 @@
             <span class="name">강남이젠컴퓨터학원</span>
             <span class="date">2020.02 ~ 2020.07</span>
             <div class="bottom">
-              <!-- <span class="text">Web, App 디자인 및 퍼블리싱 과정 수료.</span> -->
+              <span class="text">Web, App 디자인 및 퍼블리싱 과정 수료.</span>
             </div>
           </a>
         </li>
@@ -32,9 +28,9 @@
             <span class="name">(주)제제컴즈</span>
             <span class="date">2020.07 ~ 2020.10</span>
             <div class="bottom">
-              <!-- <span class="job">웹 디자이너</span>
-              <span class="text">자사 솔루션 및 홈페이지 유지보수. 템플릿 제작, App UI, SNS배너
-                디자인</span> -->
+              <!-- <span class="job">웹 디자이너</span> -->
+              <span class="text">홈페이지 유지보수. 페이지 템플릿 제작, UI 디자인, SNS배너 제작
+                디자인</span>
             </div>
           </a>
         </li>
@@ -46,9 +42,9 @@
             <span class="name">(주)흰곰</span>
             <span class="date">2020.10 ~2021.07</span>
             <div class="bottom">
-              <!-- <span class="job">웹 퍼블리셔</span>
+              <!-- <span class="job">웹 퍼블리셔</span> -->
               <span class="text">자사 솔루션 디자인 및 서비스 개발. 외부 SI 프로젝트시 퍼블리싱,
-                디자인 업무지원.</span> -->
+                디자인 업무지원.</span>
             </div>
           </a>
         </li>
@@ -60,8 +56,8 @@
             <span class="name">(주)엠에쓰아이</span>
             <span class="date">2021.07 ~ 2023.04</span>
             <div class="bottom">
-              <!-- <span class="job">웹 개발자</span>
-              <span class="text">자사 솔루션 디자인 및 서비스 개발. 외부 SI 프로젝트.</span> -->
+              <!-- <span class="job">웹 개발자</span> -->
+              <span class="text">자사 솔루션 디자인 및 서비스 개발. 외부 SI 프로젝트.</span>
             </div>
           </a>
         </li>
@@ -73,8 +69,8 @@
             <span class="name">(주)드림시스</span>
             <span class="date">2023.04 ~</span>
             <div class="bottom">
-              <!-- <span class="job">웹 개발자</span>
-              <span class="text">자사 솔루션 및 서비스 개발.</span> -->
+              <!-- <span class="job">웹 개발자</span> -->
+              <span class="text">자사 솔루션 및 서비스 개발.</span>
             </div>
           </a>
         </li>
@@ -87,22 +83,9 @@
 export default {
   data() {
     return {
-      date: new Date(),
-      firstCareer: new Date(2020, 6, 1),
-      diffText: Number,
-      nowText: String
     };
   },
   mounted() {
-    let nowYear = this.date.getFullYear();
-    let nowMonth = this.date.getMonth() + 1;
-    let nowDate = this.date.getDate();
-    this.nowText = nowYear + "년 " + nowMonth + "월 " + nowDate + "일 기준";
-
-    let diff = this.date - this.firstCareer;
-    let currDay = 24 * 60 * 60 * 1000; //시 * 분 * 초 * 밀리세컨
-    let currMonth = currDay * 30; // 월 만듬
-    this.diffText = parseInt(diff / currMonth);
   }
 };
 </script>

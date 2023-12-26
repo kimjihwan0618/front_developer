@@ -4,7 +4,7 @@
       <main>
         <MainSection ref="section1" />
         <SubSection1 ref="section2" />
-        <SubSection2 ref="section3" />
+        <!-- <SubSection2 ref="section3" /> -->
         <SubSection3 ref="section4" />
         <Project v-on:project="project" ref="section5" />
         <Contact ref="section6" />
@@ -17,7 +17,7 @@
 <script>
 import MainSection from "./components/main-section";
 import SubSection1 from "./components/sub-section1";
-import SubSection2 from "./components/sub-section2";
+// import SubSection2 from "./components/sub-section2";
 import SubSection3 from "./components/sub-section3";
 import Project from "./components/project";
 import ProjectDetail from "./components/project-detail";
@@ -27,7 +27,7 @@ export default {
   components: {
     MainSection,
     SubSection1,
-    SubSection2,
+    // SubSection2,
     SubSection3,
     Project,
     ProjectDetail,
@@ -37,10 +37,11 @@ export default {
     return {
       projectArray: [],
       sectionArray: [],
+      sectionIdx: 0,
       navLink: [
         "?section=home",
         "?section=aboutme",
-        "?section=career",
+        // "?section=career",
         "?section=skill",
         "?section=project",
         "?section=contact"
@@ -50,11 +51,23 @@ export default {
   },
   created() {
     this.$nuxt.$on("clickNav", index => {
+      const fn_moveScroll = () => {
+        window.scrollTo({
+          top: moveScroll
+        });
+      }
       this.setSectionSize();
-
-      window.scrollTo({
-        top: this.sectionArray[index].offsetTop - 120
-      });
+      let moveScroll = 0;
+      if (this.sectionIdx < index) {
+        moveScroll = this.sectionArray[index].offsetTop
+        fn_moveScroll()
+      } else if (this.sectionIdx > index) {
+        moveScroll = this.sectionArray[index].offsetTop - 60
+        fn_moveScroll()
+      } else {
+        moveScroll = 0;
+      }
+      this.sectionIdx = index
     });
   },
   methods: {
@@ -62,7 +75,7 @@ export default {
       this.sectionArray = [
         this.$refs.section1.$el,
         this.$refs.section2.$el,
-        this.$refs.section3.$el,
+        // this.$refs.section3.$el,
         this.$refs.section4.$el,
         this.$refs.section5.$el,
         this.$refs.section6.$el
@@ -77,10 +90,10 @@ export default {
         }
       });
       for (let i = 0; i < this.sectionArray.length; i++) {
-        if (this.sectionArray[i].offsetTop - 120 < window.scrollY) {
+        if (this.sectionArray[i].offsetTop - 30 < window.scrollY) {
           if (this.scrollY < i) {
             this.scrollY = i;
-            console.log("내려갈때 인덱스증가 >>" + i);
+            // console.log("내려갈때 인덱스증가 >>" + i);
             this.$nuxt.$emit("navChange", i);
           }
         } else {
@@ -90,7 +103,7 @@ export default {
           }
           if (this.scrollY > i) {
             this.scrollY = i;
-            console.log("올라갈때 인덱스감소 >>" + i);
+            // console.log("올라갈때 인덱스감소 >>" + i);
             this.$nuxt.$emit("navChange", i);
           }
         }
