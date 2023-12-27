@@ -265,7 +265,6 @@ export default {
   methods: {
     titleClick(param) {
       this.activeTitle = param
-      console.log(param)
       switch (param) {
         case "Front-End":
           this.activeSkill = "HTML";

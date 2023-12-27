@@ -24,7 +24,7 @@
               aboutMe[aboutMeIndex].number
             }}</span>
           </h5>
-          <p class="txt" ref="aboutMeTxt">{{ aboutMe[aboutMeIndex].text }}</p>
+          <p class="txt" ref="aboutMeTxt" v-html="aboutMe[aboutMeIndex].text"></p>
         </div>
         <div class="slide-btn">
           <span class="arrow-left" @click="arrowLeft">
@@ -67,22 +67,26 @@ export default {
         {
           title: "UI Developer",
           number: "01",
-          text:
-            "웹디자인, 프론트엔드 업무 경험으로 백엔드 개발시에도 프론트 개발자와의 소통에 용이합니다.",
+          text: "- 프론트엔드 업무 경험으로 백엔드 개발시, 프론트 개발자와의 소통에 용이 <br /> "
+            + "- UI 디자인 -> 페이지 구현 업무 프로세스 경험 多 <br />"
+            + "- UI 라이브러리 경험(HighChart, MetrialUI, KendoUI, ChartJs, etc)",
           img: require("@/assets/images/about/me1.png")
         },
         {
           title: "Back-End Developer",
           number: "02",
           text:
-            "다양한 프레임워크와 실서버 배포까지 업무에서 경험함으로써, 전체 서비스관점에서의 개발경험을 가지고 있습니다.",
+            "- 백엔드 프레임워크 개발경험(Django, SpringBoot, Struts) <br />"
+            + "- 주 업무(REST API 개발, 마이그레이션, 운영 서버 관리 & 유지보수)<br />"
+            + "- VM & Docker를 통한 테스트 & 배포환경 구축",
           img: require("@/assets/images/about/me2.png")
         },
         {
           title: "My Character",
           number: "03",
           text:
-            "모르는 부분에 대해서는 부끄러워 하지 않고 동료, 선배들에게 질문하고, 알게된 지식을 업무에 적용할수 있도록 만듭니다.",
+            "- 모르는 부분에 대해서는 서슴없이 동료, 선배들에게 질문해서 업무에 적용할수있도록 합니다. <br />"
+            + "- 새로 알게된 지식을 업무에 적용 & 개선하는 과정에서 성취감을 느낍니다.",
           img: require("@/assets/images/about/me3.jpg")
         }
       ],

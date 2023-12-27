@@ -5,7 +5,7 @@ export default {
   // },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    // title: "김지환 포트폴리오",
+    title: "김지환 포트폴리오",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

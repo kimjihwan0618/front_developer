@@ -13,7 +13,7 @@
       </ul>
       <ul class="sns-wrap">
         <li>
-          <a href="https://open.kakao.com/o/sIEBFo4e" target="_blank">
+          <a href="https://open.kakao.com/o/sXq8kb0f" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.362 35.362">
               <g id="그룹_3" data-name="그룹 3" transform="translate(-1602 -43)">
                 <path class="kakaocolor" id="패스_1" data-name="패스 1"
