@@ -19,11 +19,11 @@
             </li>
             <li>
               <label for="email">이메일</label>
-              <input type="email" calss="email" name="user_email" />
+              <input placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
             </li>
             <li>
               <label for="phone">휴대폰 번호</label>
-              <input type="phone" calss="phone" name="user_phone" />
+              <input placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
             </li>
             <li>
               <label for="text">메세지 입력</label>
@@ -97,8 +97,8 @@ export default {
         if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
           const param = {
             phone: phone,
-            userId,
-            ptId: "hodo_private",
+            userId: 'jhjr0121',
+            ptId: "ptid01",
             pw: 'WlGhks010!@#',
             from: email,
             to: userEmail,

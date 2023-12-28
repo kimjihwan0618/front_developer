@@ -876,7 +876,7 @@
   overflow: hidden;
   box-shadow: var(--box-shdow);
   display: inline-block;
-  width: 80%;
+  width: 90%;
   cursor: auto;
   pointer-events: none;
 }
@@ -919,8 +919,7 @@
 }
 
 .container .sub-section.project .project-wrap .project-item .right h4 {
-  border-bottom: 2px solid var(--main-color3);
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   color: var(--text-color);
   font-size: 2.4rem;
   font-family: "NotoSansKR-Midium";
@@ -931,8 +930,31 @@
 .container .sub-section.project .project-wrap .project-item .right p {
   font-size: 1.6rem;
   color: var(--text-color);
-  opacity: 0.8;
-  margin: 30px 0 40px;
+  opacity: 0.5;
+  margin: 0px 0 20px;
+  border-bottom: 1px solid #c7c7c7;
+  padding-bottom: 20px;
+}
+
+.container .sub-section.project .project-wrap .project-item .right>ul {
+  font-size: 1.4rem;
+}
+
+.container .sub-section.project .project-wrap .project-item .right>ul li {
+  margin-bottom: 14px;
+}
+
+.container .sub-section.project .project-wrap .project-item .right>ul li dt {
+  margin-bottom: 2px;
+  opacity: .5;
+}
+
+.container .sub-section.project .project-wrap .project-item .right>ul li dd {
+  line-height: 1.72;
+}
+
+.container .sub-section.project .project-wrap .project-item .right>ul li:last-of-type {
+  margin-bottom: 0px;
 }
 
 .container .sub-section.project .project-wrap .project-item .right span {
@@ -971,7 +993,6 @@
 .container .sub-section.project .project-wrap .project-item:nth-child(n) .left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   -webkit-transform: translateX(-14px);
   float: left;
 }
@@ -1220,13 +1241,6 @@
 
   .container main .sub-section.project .project-wrap .project-item .right h4 {
     font-size: 2.2rem;
-  }
-
-  .container main .sub-section.project .project-wrap .project-item .right p {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    opacity: 0.8;
-    margin: 30px 0 40px;
   }
 
   .container main .sub-section.project .project-wrap .project-item .right span {
@@ -1487,6 +1501,11 @@
 }
 
 @media screen and (max-width: 675px) {
+  .container .sub-section.project .project-wrap .project-item .right>ul {
+    text-align: left;
+    width: 100%;
+  }
+
   .project_detail {
     width: 90%;
     min-width: auto;
