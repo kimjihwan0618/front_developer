@@ -1,8 +1,8 @@
 export default {
   target: "static",
-  // router: {
-  //   // base: "./"
-  // },
+  router: {
+    base: "./"
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: "프론트엔드 포트폴리오",
