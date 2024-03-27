@@ -2,8 +2,12 @@
   <section class="sub-section contact">
     <div class="loading__wrap" ref="loadingWrap">
       <div class="loading__bg"></div>
-      <lottie-vue-player :theme="options.theme" :player-size="options.playerSize" :player-controls="true"
-        style="width: 100%; height:400px">
+      <lottie-vue-player
+        :theme="options.theme"
+        :player-size="options.playerSize"
+        :player-controls="true"
+        style="width: 100%; height: 400px"
+      >
       </lottie-vue-player>
     </div>
     <div class="section-title">
@@ -14,15 +18,33 @@
         <ul>
           <li>
             <label for="name">이름</label>
-            <input ref="value1" placeholder="연락하시는분의 성함을 입력해주세요" type="text" class="name" name="user_name" />
+            <input
+              ref="value1"
+              placeholder="연락하시는분의 성함을 입력해주세요"
+              type="text"
+              class="name"
+              name="user_name"
+            />
           </li>
           <li>
             <label for="email">이메일</label>
-            <input ref="value2" placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
+            <input
+              ref="value2"
+              placeholder="연락 받으실 이메일을 입력해주세요"
+              type="email"
+              calss="email"
+              name="user_email"
+            />
           </li>
           <li>
             <label for="phone">휴대폰 번호</label>
-            <input ref="value3" placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
+            <input
+              ref="value3"
+              placeholder="- 없이 숫자를 붙혀서 입력해주세요"
+              type="phone"
+              calss="phone"
+              name="user_phone"
+            />
           </li>
           <li>
             <label for="text">메세지</label>
@@ -67,15 +89,15 @@ export default {
           light: {
             color: "#3D4852",
             backgroundColor: "#fff",
-            opacity: "0.7"
+            opacity: "0.7",
           },
           dark: {
             color: "#fff",
             backgroundColor: "#202020",
-            opacity: "0.7"
-          }
-        }
-      }
+            opacity: "0.7",
+          },
+        },
+      },
     };
   },
   methods: {
@@ -88,18 +110,18 @@ export default {
       ) {
         alert("공백을 채워주세요!");
       } else {
-        const userId = this.$refs.value1.value
-        const email = this.$refs.value2.value
-        const phone = this.$refs.value3.value
-        const message = this.$refs.value4.value
-        const userEmail = "wlghks0618@kakao.com"
+        const userId = this.$refs.value1.value;
+        const email = this.$refs.value2.value;
+        const phone = this.$refs.value3.value;
+        const message = this.$refs.value4.value;
+        const userEmail = "wlghks0618@kakao.com";
         if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
-          this.$refs.loadingWrap.classList.add("on")
+          this.$refs.loadingWrap.classList.add("on");
           const param = {
             phone: phone,
-            userId: 'wlghks0618',
+            userId: "wlghks0618",
             ptId: "ptid02",
-            pw: 'WlGhks010!@#',
+            pw: "WlGhks010!@#",
             from: email,
             to: userEmail,
             subject: `이직문의`,
@@ -135,30 +157,30 @@ export default {
         `,
           };
           try {
-            fetch('https://kimjihodo.synology.me:3001/email/send', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
+            fetch("https://kimjihodo.synology.me:3001/email/send", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
               body: JSON.stringify(param),
             })
               .then((response) => {
                 if (!response.ok) {
-                  throw new Error('API 호출에 실패하였습니다.');
+                  throw new Error("API 호출에 실패하였습니다.");
                 }
               })
               .then((data) => {
-                alert('메일 전송되었습니다!');
-                this.$refs.value1.value = ""
-                this.$refs.value2.value = ""
-                this.$refs.value3.value = ""
-                this.$refs.value4.value = ""
+                alert("메일 전송되었습니다!");
+                this.$refs.value1.value = "";
+                this.$refs.value2.value = "";
+                this.$refs.value3.value = "";
+                this.$refs.value4.value = "";
               })
               .catch((error) => {
                 console.log(error);
-                alert('메일 전송이 실패했습니다.');
+                alert("메일 전송이 실패했습니다.");
               });
           } catch (error) {
             console.log(error);
-            alert('메일 전송이 실패했습니다.');
+            alert("메일 전송이 실패했습니다.");
           } finally {
             this.$refs.loadingWrap.classList.remove("on");
           }
@@ -166,7 +188,7 @@ export default {
           alert("휴대폰 번호를 확인해주세요!");
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
