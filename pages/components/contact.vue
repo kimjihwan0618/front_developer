@@ -95,10 +95,11 @@ export default {
         const message = e.target[3].value
         const userEmail = "jhkim5@drimsys.com"
         if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
+          this.$refs.loadingWrap.classList.add("on")
           const param = {
             phone: phone,
-            userId: 'jhjr0121',
-            ptId: "ptid01",
+            userId: 'github 페이지',
+            ptId: "ptid02",
             pw: 'WlGhks010!@#',
             from: email,
             to: userEmail,
@@ -143,16 +144,19 @@ export default {
               .then((response) => response.text())
               .then((text) => {
                 alert('메일 전송되었습니다!');
-                this.$refs.loadingWrap.classList.remove("on");
+                e.target[0].value = ""
+                e.target[1].value = ""
+                e.target[2].value = ""
+                e.target[3].value = ""
               })
               .catch((error) => {
                 console.log(error);
                 alert('메일 전송이 실패했습니다.');
-                this.$refs.loadingWrap.classList.remove("on");
               });
           } catch (error) {
             console.log(error);
             alert('메일 전송이 실패했습니다.');
+          } finally {
             this.$refs.loadingWrap.classList.remove("on");
           }
         } else {
