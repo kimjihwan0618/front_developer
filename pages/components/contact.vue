@@ -15,19 +15,19 @@
           <ul>
             <li>
               <label for="name">이름</label>
-              <input placeholder="연락하시는분의 성함을 입력해주세요" type="text" class="name" name="user_name" />
+              <input ref="value1" placeholder="연락하시는분의 성함을 입력해주세요" type="text" class="name" name="user_name" />
             </li>
             <li>
               <label for="email">이메일</label>
-              <input placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
+              <input ref="value2" placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
             </li>
             <li>
               <label for="phone">휴대폰 번호</label>
-              <input placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
+              <input ref="value3" placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
             </li>
             <li>
               <label for="text">메세지</label>
-              <textarea name="message"></textarea>
+              <textarea ref="value4" name="message"></textarea>
             </li>
           </ul>
         </div>
@@ -46,7 +46,8 @@
           </dl>
         </div>
       </div>
-      <input type="submit" class="submit-btn" value="전송" />
+      <button class="submit-btn" onclick="sendEmail()">전송</button>
+      <!-- <input type="submit" class="submit-btn" value="" /> -->
     </form>
   </section>
 </template>
@@ -82,17 +83,17 @@ export default {
   methods: {
     sendEmail(e) {
       if (
-        e.target[0].value === "" ||
-        e.target[1].value === "" ||
-        e.target[2].value === "" ||
-        e.target[3].value === ""
+        this.$refs.value1.value === "" ||
+        this.$refs.value2.value === "" ||
+        this.$refs.value3.value === "" ||
+        this.$refs.value4.value === ""
       ) {
         alert("공백을 채워주세요!");
       } else {
-        const userId = e.target[0].value
-        const email = e.target[1].value
-        const phone = e.target[2].value
-        const message = e.target[3].value
+        const userId = this.$refs.value1.value
+        const email = this.$refs.value2.value
+        const phone = this.$refs.value3.value
+        const message = this.$refs.value4.value
         const userEmail = "wlghks0618@kakao.com"
         if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
           this.$refs.loadingWrap.classList.add("on")
@@ -148,10 +149,10 @@ export default {
               })
               .then((data) => {
                 alert('메일 전송되었습니다!');
-                e.target[0].value = ""
-                e.target[1].value = ""
-                e.target[2].value = ""
-                e.target[3].value = ""
+                this.$refs.value1.value = ""
+                this.$refs.value2.value = ""
+                this.$refs.value3.value = ""
+                this.$refs.value4.value = ""
               })
               .catch((error) => {
                 console.log(error);
