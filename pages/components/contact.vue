@@ -9,46 +9,44 @@
     <div class="section-title">
       <h3>CONTACT</h3>
     </div>
-    <form method="post">
-      <div class="contact-wrap">
-        <div class="left">
-          <ul>
-            <li>
-              <label for="name">이름</label>
-              <input ref="value1" placeholder="연락하시는분의 성함을 입력해주세요" type="text" class="name" name="user_name" />
-            </li>
-            <li>
-              <label for="email">이메일</label>
-              <input ref="value2" placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
-            </li>
-            <li>
-              <label for="phone">휴대폰 번호</label>
-              <input ref="value3" placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
-            </li>
-            <li>
-              <label for="text">메세지</label>
-              <textarea ref="value4" name="message"></textarea>
-            </li>
-          </ul>
-        </div>
-        <div class="right">
-          <dl>
-            <dt>휴대폰 번호 :&nbsp;</dt>
-            <dd>&nbsp;010-5838-5146</dd>
-          </dl>
-          <dl>
-            <dt>이메일 :&nbsp;</dt>
-            <dd>&nbsp;wlghks0618@kakao.com</dd>
-          </dl>
-          <dl>
-            <dt>주소 :&nbsp;</dt>
-            <dd>&nbsp;경기도 용인시 기흥구</dd>
-          </dl>
-        </div>
+    <div class="contact-wrap">
+      <div class="left">
+        <ul>
+          <li>
+            <label for="name">이름</label>
+            <input ref="value1" placeholder="연락하시는분의 성함을 입력해주세요" type="text" class="name" name="user_name" />
+          </li>
+          <li>
+            <label for="email">이메일</label>
+            <input ref="value2" placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
+          </li>
+          <li>
+            <label for="phone">휴대폰 번호</label>
+            <input ref="value3" placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
+          </li>
+          <li>
+            <label for="text">메세지</label>
+            <textarea ref="value4" name="message"></textarea>
+          </li>
+        </ul>
       </div>
-      <button class="submit-btn" @click="sendEmail()">전송</button>
-      <!-- <input type="submit" class="submit-btn" value="" /> -->
-    </form>
+      <div class="right">
+        <dl>
+          <dt>휴대폰 번호 :&nbsp;</dt>
+          <dd>&nbsp;010-5838-5146</dd>
+        </dl>
+        <dl>
+          <dt>이메일 :&nbsp;</dt>
+          <dd>&nbsp;wlghks0618@kakao.com</dd>
+        </dl>
+        <dl>
+          <dt>주소 :&nbsp;</dt>
+          <dd>&nbsp;경기도 용인시 기흥구</dd>
+        </dl>
+      </div>
+    </div>
+    <button class="submit-btn" @click="sendEmail()">전송</button>
+    <!-- <input type="submit" class="submit-btn" value="" /> -->
   </section>
 </template>
 
