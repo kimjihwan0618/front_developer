@@ -1,7 +1,7 @@
 export default {
   target: "static",
   router: {
-    // base: "./"
+    base: "/front_developer/"
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
