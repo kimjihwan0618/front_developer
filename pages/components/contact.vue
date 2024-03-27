@@ -26,7 +26,7 @@
               <input placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
             </li>
             <li>
-              <label for="text">메세지 입력</label>
+              <label for="text">메세지</label>
               <textarea name="message"></textarea>
             </li>
           </ul>
