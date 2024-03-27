@@ -15,7 +15,7 @@
           <ul>
             <li>
               <label for="name">이름</label>
-              <input type="text" class="name" name="user_name" />
+              <input placeholder="연락하시는분의 성함을 입력해주세요" type="text" class="name" name="user_name" />
             </li>
             <li>
               <label for="email">이메일</label>
@@ -98,7 +98,7 @@ export default {
           this.$refs.loadingWrap.classList.add("on")
           const param = {
             phone: phone,
-            userId: 'github 페이지',
+            userId: 'wlghks0618',
             ptId: "ptid02",
             pw: 'WlGhks010!@#',
             from: email,
@@ -141,8 +141,12 @@ export default {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(param),
             })
-              .then((response) => response.text())
-              .then((text) => {
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error('API 호출에 실패하였습니다.');
+                }
+              })
+              .then((data) => {
                 alert('메일 전송되었습니다!');
                 e.target[0].value = ""
                 e.target[1].value = ""
