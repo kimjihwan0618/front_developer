@@ -7,8 +7,8 @@
       <ul class="gnb">
         <li v-for="(navTitle, index) in menuTitle" :key="navTitle.name" ref="navTitle" @click="clickNav(index)">
           <nuxt-link ref="navLink" :to="navTitle.link">{{
-            navTitle.name
-          }}</nuxt-link>
+          navTitle.name
+        }}</nuxt-link>
         </li>
       </ul>
       <ul class="sns-wrap">

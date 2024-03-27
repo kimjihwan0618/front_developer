@@ -60,7 +60,7 @@ export default {
       projectArr: [
         {
           img: require("@/assets/images/project/project11.jpg"),
-          title: "MyPoPol",
+          title: "Mypopol",
           text: "포트폴리오 사이트 관리자 페이지",
           date: "2023.05 ~",
           info: "유저가 사용중인 포트폴리오 페이지를 관리할수있는 시스템",

@@ -9,45 +9,44 @@
     <div class="section-title">
       <h3>CONTACT</h3>
     </div>
-    <form method="post" @submit.prevent="sendEmail">
-      <div class="contact-wrap">
-        <div class="left">
-          <ul>
-            <li>
-              <label for="name">이름</label>
-              <input type="text" class="name" name="user_name" />
-            </li>
-            <li>
-              <label for="email">이메일</label>
-              <input placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
-            </li>
-            <li>
-              <label for="phone">휴대폰 번호</label>
-              <input placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
-            </li>
-            <li>
-              <label for="text">메세지 입력</label>
-              <textarea name="message"></textarea>
-            </li>
-          </ul>
-        </div>
-        <div class="right">
-          <dl>
-            <dt>휴대폰 번호 :&nbsp;</dt>
-            <dd>&nbsp;010-5838-5146</dd>
-          </dl>
-          <dl>
-            <dt>이메일 :&nbsp;</dt>
-            <dd>&nbsp;wlghks0618@kakao.com</dd>
-          </dl>
-          <dl>
-            <dt>주소 :&nbsp;</dt>
-            <dd>&nbsp;경기도 용인시 기흥구</dd>
-          </dl>
-        </div>
+    <div class="contact-wrap">
+      <div class="left">
+        <ul>
+          <li>
+            <label for="name">이름</label>
+            <input ref="value1" placeholder="연락하시는분의 성함을 입력해주세요" type="text" class="name" name="user_name" />
+          </li>
+          <li>
+            <label for="email">이메일</label>
+            <input ref="value2" placeholder="연락 받으실 이메일을 입력해주세요" type="email" calss="email" name="user_email" />
+          </li>
+          <li>
+            <label for="phone">휴대폰 번호</label>
+            <input ref="value3" placeholder="- 없이 숫자를 붙혀서 입력해주세요" type="phone" calss="phone" name="user_phone" />
+          </li>
+          <li>
+            <label for="text">메세지</label>
+            <textarea ref="value4" name="message"></textarea>
+          </li>
+        </ul>
       </div>
-      <input type="submit" class="submit-btn" value="전송" />
-    </form>
+      <div class="right">
+        <dl>
+          <dt>휴대폰 번호 :&nbsp;</dt>
+          <dd>&nbsp;010-5838-5146</dd>
+        </dl>
+        <dl>
+          <dt>이메일 :&nbsp;</dt>
+          <dd>&nbsp;wlghks0618@kakao.com</dd>
+        </dl>
+        <dl>
+          <dt>주소 :&nbsp;</dt>
+          <dd>&nbsp;경기도 용인시 기흥구</dd>
+        </dl>
+      </div>
+    </div>
+    <button class="submit-btn" @click="sendEmail()">전송</button>
+    <!-- <input type="submit" class="submit-btn" value="" /> -->
   </section>
 </template>
 
@@ -82,23 +81,24 @@ export default {
   methods: {
     sendEmail(e) {
       if (
-        e.target[0].value === "" ||
-        e.target[1].value === "" ||
-        e.target[2].value === "" ||
-        e.target[3].value === ""
+        this.$refs.value1.value === "" ||
+        this.$refs.value2.value === "" ||
+        this.$refs.value3.value === "" ||
+        this.$refs.value4.value === ""
       ) {
         alert("공백을 채워주세요!");
       } else {
-        const userId = e.target[0].value
-        const email = e.target[1].value
-        const phone = e.target[2].value
-        const message = e.target[3].value
-        const userEmail = "jhkim5@drimsys.com"
+        const userId = this.$refs.value1.value
+        const email = this.$refs.value2.value
+        const phone = this.$refs.value3.value
+        const message = this.$refs.value4.value
+        const userEmail = "wlghks0618@kakao.com"
         if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
+          this.$refs.loadingWrap.classList.add("on")
           const param = {
             phone: phone,
-            userId: 'jhjr0121',
-            ptId: "ptid01",
+            userId: 'wlghks0618',
+            ptId: "ptid02",
             pw: 'WlGhks010!@#',
             from: email,
             to: userEmail,
@@ -140,19 +140,26 @@ export default {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(param),
             })
-              .then((response) => response.text())
-              .then((text) => {
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error('API 호출에 실패하였습니다.');
+                }
+              })
+              .then((data) => {
                 alert('메일 전송되었습니다!');
-                this.$refs.loadingWrap.classList.remove("on");
+                this.$refs.value1.value = ""
+                this.$refs.value2.value = ""
+                this.$refs.value3.value = ""
+                this.$refs.value4.value = ""
               })
               .catch((error) => {
                 console.log(error);
                 alert('메일 전송이 실패했습니다.');
-                this.$refs.loadingWrap.classList.remove("on");
               });
           } catch (error) {
             console.log(error);
             alert('메일 전송이 실패했습니다.');
+          } finally {
             this.$refs.loadingWrap.classList.remove("on");
           }
         } else {

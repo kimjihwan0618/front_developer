@@ -1,11 +1,19 @@
 export default {
   target: "static",
   router: {
+<<<<<<< HEAD
     base: "/front_developer/",
   },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     title: "김지환 포트폴리오",
+=======
+    base: "/front_developer/"
+  },
+  // Global page headers (https://go.nuxtjs.dev/config-head)
+  head: {
+    title: "프론트엔드 포트폴리오",
+>>>>>>> 6caeb016a4ea700eeef897b08c75708a4d4a6754
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
