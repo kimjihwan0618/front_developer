@@ -93,7 +93,7 @@ export default {
         const email = e.target[1].value
         const phone = e.target[2].value
         const message = e.target[3].value
-        const userEmail = "jhkim5@drimsys.com"
+        const userEmail = "wlghks0618@kakao.com"
         if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
           this.$refs.loadingWrap.classList.add("on")
           const param = {
