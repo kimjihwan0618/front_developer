@@ -9,7 +9,7 @@
     <div class="section-title">
       <h3>CONTACT</h3>
     </div>
-    <form method="post" @submit.prevent="sendEmail">
+    <form method="post">
       <div class="contact-wrap">
         <div class="left">
           <ul>
@@ -46,7 +46,7 @@
           </dl>
         </div>
       </div>
-      <button class="submit-btn" onclick="sendEmail()">전송</button>
+      <button class="submit-btn" @click="sendEmail()">전송</button>
       <!-- <input type="submit" class="submit-btn" value="" /> -->
     </form>
   </section>
