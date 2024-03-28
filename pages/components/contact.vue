@@ -80,31 +80,34 @@ export default {
   },
   methods: {
     sendEmail(e) {
-      if (
-        this.$refs.value1.value === "" ||
-        this.$refs.value2.value === "" ||
-        this.$refs.value3.value === "" ||
-        this.$refs.value4.value === ""
-      ) {
-        alert("공백을 채워주세요!");
-      } else {
-        const userId = this.$refs.value1.value
-        const email = this.$refs.value2.value
-        const phone = this.$refs.value3.value
-        const message = this.$refs.value4.value
-        const userEmail = "wlghks0618@kakao.com"
-        if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
-          this.$refs.loadingWrap.classList.add("on")
-          const param = {
-            phone: phone,
-            userId: 'wlghks0618',
-            ptId: "ptid02",
-            pw: 'WlGhks010!@#',
-            from: email,
-            to: userEmail,
-            subject: `이직문의`,
-            title: "안녕하세요 이직 문의드립니다.",
-            body: `
+      const excute = async () => {
+        if (
+          this.$refs.value1.value === "" ||
+          this.$refs.value2.value === "" ||
+          this.$refs.value3.value === "" ||
+          this.$refs.value4.value === ""
+        ) {
+          alert("공백을 채워주세요!");
+        } else {
+          const userId = this.$refs.value1.value
+          const email = this.$refs.value2.value
+          const phone = this.$refs.value3.value
+          const message = this.$refs.value4.value
+          const userEmail = "wlghks0618@kakao.com"
+          if (/^01([0|1|6|7|8|9]?)\d{3,4}\d{4}$/.test(phone)) {
+            this.$refs.loadingWrap.classList.add("on")
+            try {
+              const param = {
+                phone: phone,
+                userId: 'wlghks0618',
+                ptId: "ptid02",
+                pw: 'WlGhks010!@#',
+                from: email,
+                to: userEmail,
+                subject: `이직문의`,
+                title: "안녕하세요 이직 문의드립니다.",
+                content: message,
+                html: `
         <div style="margin: 16px 0 0 0; padding: 12px 12px 60px 12px;box-sizing: border-box;">
           <div style="padding: 34px; box-sizing: border-box;background: #fff;border-radius: 12px;box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);">
             <h1 style="margin: 0;padding: 0; color: #414141;">'${userId}'님의 사이트로부터 문의 메일이 도착했습니다.</h1>
@@ -133,39 +136,30 @@ export default {
           </div>
         </div>
         `,
-          };
-          try {
-            fetch('https://kimjihodo.synology.me:3001/email/send', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(param),
-            })
-              .then((response) => {
-                if (!response.ok) {
-                  throw new Error('API 호출에 실패하였습니다.');
-                }
+              };
+              const res = await fetch('https://kimjihodo.synology.me:3001/email/send', {
+                // const res = await fetch('http://localhost:3000/email/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(param),
               })
-              .then((data) => {
-                alert('메일 전송되었습니다!');
-                this.$refs.value1.value = ""
-                this.$refs.value2.value = ""
-                this.$refs.value3.value = ""
-                this.$refs.value4.value = ""
-              })
-              .catch((error) => {
-                console.log(error);
-                alert('메일 전송이 실패했습니다.');
-              });
-          } catch (error) {
-            console.log(error);
-            alert('메일 전송이 실패했습니다.');
-          } finally {
-            this.$refs.loadingWrap.classList.remove("on");
+              this.$refs.value1.value = ""
+              this.$refs.value2.value = ""
+              this.$refs.value3.value = ""
+              this.$refs.value4.value = ""
+              alert('메일 전송되었습니다!');
+            } catch (error) {
+              console.log(error);
+              alert('메일 전송이 실패했습니다.');
+            } finally {
+              this.$refs.loadingWrap.classList.remove("on");
+            }
+          } else {
+            alert("휴대폰 번호를 확인해주세요!");
           }
-        } else {
-          alert("휴대폰 번호를 확인해주세요!");
         }
       }
+      excute();
     }
   }
 };
