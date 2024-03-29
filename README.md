@@ -6,7 +6,7 @@
 이 프로젝트는 Vue.js 3와 Vuex 문법, ph-ages 배포를 연습하기 위해 만들어진 포트폴리오 페이지입니다.
 
 
-## 설치, 실행, 빌드, 배포 방법
+## 설치, 로컬 서버 실행, 빌드, gh-pages 배포
 1. 저장소 클론
 
 ``
@@ -31,7 +31,7 @@ npm run dev
 npm run generate
 ``
 
-5. 앱 배포 
+5. `gh-pages` 배포 
 
 ``
 npm run deploy
