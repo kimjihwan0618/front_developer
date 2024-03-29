@@ -9,33 +9,28 @@
 ## 설치, 로컬 서버 실행, 빌드, gh-pages 배포
 1. 저장소 클론
 
-``
+```plaintext
 git clone https://github.com/kimjihwan0618/front_developer.git
-``
 
 2. 필요한 패키지 설치
 
-``
+```plaintext
 npm i
-``
 
 3. 로컬 개발 서버 실행
 
-``
+```plaintext
 npm run dev
-``
 
 4. 앱 빌드
 
-``
+```plaintext
 npm run generate
-``
 
 5. `gh-pages` 배포 
 
-``
+```plaintext
 npm run deploy
-``
 
 
 ## 기능
