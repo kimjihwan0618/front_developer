@@ -11,26 +11,31 @@
 
 ```plaintext
 git clone https://github.com/kimjihwan0618/front_developer.git
+```
 
 2. 필요한 패키지 설치
 
 ```plaintext
 npm i
+```
 
 3. 로컬 개발 서버 실행
 
 ```plaintext
 npm run dev
+```
 
 4. 앱 빌드
 
 ```plaintext
 npm run generate
+```
 
 5. `gh-pages` 배포 
 
 ```plaintext
 npm run deploy
+```
 
 
 ## 기능
@@ -56,3 +61,4 @@ npm run deploy
 아래에는 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be)가 실행되고있는 호스트 주소를 적어줍니다.
 ```plaintext
 MAIL_API_URL=https://example-host.com:3000
+```
