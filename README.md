@@ -1,118 +1,34 @@
-<!-- # 포트폴리오
+# 프론트엔드 개발 포트폴리오 렌딩페이지
+🔗 <a href="https://kimjihwan0618.github.io/front_developer/" target="_blank">사이트 링크</a>
 
-## vue + nuxt
+## 개요
+이 프로젝트는 Vue.js 3와 Vuex 문법, ph-ages 배포를 연습하기 위해 만들어진 포트폴리오 페이지입니다.
 
-사이트 바로가기 : https://kimjihwan0618.github.io/portfolio<br />
+## 설치, 실행, 빌드, 배포 방법
+1. 저장소 클론
+``
+git clone https://github.com/kimjihwan0618/front_developer.git
+``
+2. 필요한 패키지 설치
+``
+npm i
+``
+3. 로컬 개발 서버 실행
+``
+npm run dev
+``
+4. 앱 빌드
+``
+npm run generate
+``
+5. 앱 배포 
+``
+npm run deploy
+``
+## 기능
+- 스크롤 위치에 따라 프로젝트 아이템이 나타나고, 스크롤이 벗어나면 아이템이 사라지는 애니메이션을 적용.
+![프로젝트 섹션 이미지](./assets/images/project_scroll_ani.gif)
+- 페이지 맨 하단에는 메일 폼이 있으며, 이를 통해 메일을 전송할 경우 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be/blob/main/controllers/emailCtrl.js)의 `sendMail` 실행.
+![메일 전송 이미지](./assets/images/mail_send.gif)
 
-Vue와, Nuxt 프레임워크가 제공하는 구조로 FE 작업을 하였으며, 반복적인 코드중복과 변수활용을 위해 Sass로 작업하였습니다.
-
-## 목차
-
-- about me
-- career 
-- skill
-- project
-- contact
-
-## 사용기술
-
-### about me
-- JS로 슬라이드(Carousel)를 구현했습니다.
-
-<img src="https://kimjihwan0618.github.io/web/assets/video/about_vd2.gif" width="700">
-
-
-Javascript
-
-<pre><code>arrowLeft() {
-  if (this.aboutMeIndex == 0) {
-    this.aboutMeIndex = this.aboutMe.length;
-  }
-  this.aboutMeIndex--;
-  this.aboutMeSwipe();
-},
-arrowRight() {
-  if (this.aboutMeIndex == this.aboutMe.length - 1) {
-    this.aboutMeIndex = -1;
-  }
-  this.aboutMeIndex++;
-  this.aboutMeSwipe();
-},
-aboutMeSwipe() {
-  for (let remove = 0; remove < this.aboutMe.length; remove++) {
-    this.$refs.aboutImg[remove].classList.remove("on");
-  }
-  this.$refs.aboutImg[this.aboutMeIndex].classList.add("on");
-  this.$refs.circleMove.style.left = this.aboutMeIndex * 2 * 10 + "px";
-}</pre></code>
-
-Html
-
-<pre><code>
-</pre></code>
-
-
-### carrer
-
-- 첫 취업일로부터 JS Date 객체를 사용해 오늘까지의 날짜를 계산하였습니다.
-<img src="https://kimjihwan0618.github.io/web/assets/video/carrer_vd.gif" width="700">
-
-Javascript
-
-<pre><code>data() {
-    return {
-      date: new Date(),
-      firstCareer: new Date(2020, 6, 1),
-      diffText: Number,
-      nowText: String
-    };
-  },
-  mounted() {
-    let nowYear = this.date.getFullYear();
-    let nowMonth = this.date.getMonth() + 1;
-    let nowDate = this.date.getDate();
-    this.nowText = nowYear + "년 " + nowMonth + "월 " + nowDate + "일 기준";
-
-    let diff = this.date - this.firstCareer;
-    let currDay = 24 * 60 * 60 * 1000; //시 * 분 * 초 * 밀리세컨
-    let currMonth = currDay * 30; // 월 만듬
-    this.diffText = parseInt(diff / currMonth);
-  }
-</pre></code>
-
-Html
-
-<pre><code><span class="total-career">경력 {{ diffText }}개월</span></pre></code>
-
-### contact
-- javascript API email-js를사용하여 이메일을 받을수 있도록 기능을 구현하였습니다.
-<img src="https://kimjihwan0618.github.io/web/assets/video/contact_vd.gif" width="700">
-
-Javascript
-
-<pre><code>sendEmail: e => {
-    if (
-      e.path[0][0].value === "" ||
-      e.path[0][1].value === "" ||
-      e.path[0][2].value === ""
-    ) {
-      alert("공백을 채워주세요!");
-    } else {
-    emailjs.sendForm(
-      "service_wztk4bx",
-      "template_2edfiap",
-      e.target,
-      "user_mrPFHtVDlQimcAtxWCbaK"
-    )
-    .then(
-      result => {
-        console.log("SUCCESS!", result.status, result.text);
-        alert("전송이 완료되었습니다 감사합니다^-^");
-      },
-      error => {
-        console.log("FAILED...", error);
-        alert("전송에 실패하였습니다. 다시 시도해주세요!");
-      }
-    );
-  }
-}</pre></code> -->
+##
