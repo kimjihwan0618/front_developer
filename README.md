@@ -31,4 +31,10 @@ npm run deploy
 - 페이지 맨 하단에는 메일 폼이 있으며, 이를 통해 메일을 전송할 경우 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be/blob/main/controllers/emailCtrl.js)의 `sendMail` 실행.
 ![메일 전송 이미지](./assets/images/mail_send.gif)
 
-##
+## 환경 변수 설정
+
+배포할 때 사용할 환경 변수를 설정해야 합니다. 이를 위해 `.env.production` 파일을 프로젝트 루트 디렉토리에 생성하고 다음과 같이 환경 변수를 추가합니다.
+
+아래에는 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be.js)가 구현되있는 네트워크 주소를 적어줍니다.
+```plaintext
+MAIL_API_URL=https://example-host.com:3000

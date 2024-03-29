@@ -51,8 +51,6 @@
 </template>
 
 <script>
-import emailjs from "emailjs-com";
-
 export default {
   data() {
     return {
@@ -108,46 +106,49 @@ export default {
                 title: "안녕하세요 이직 문의드립니다.",
                 content: message,
                 html: `
-        <div style="margin: 16px 0 0 0; padding: 12px 12px 60px 12px;box-sizing: border-box;">
-          <div style="padding: 34px; box-sizing: border-box;background: #fff;border-radius: 12px;box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);">
-            <h1 style="margin: 0;padding: 0; color: #414141;">'${userId}'님의 사이트로부터 문의 메일이 도착했습니다.</h1>
-            <p style="color: #999; margin: 8px 0 34px 0; padding: 0;">메일 내용은 아래와 같습니다.</p>
-            <ul style="list-style: none;margin: 0 0 38px 0;padding: 0 0 18px 0; border-bottom: 1px solid rgb(231, 231, 231);">
-              <li style="margin-bottom: 12px;">
-                <dl style="display: flex;align-items: flex-start;">
-                  <dt style="min-width: 60px;opacity: .6; white-space: nowrap;">제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
-                  <dd style="margin: 0;padding: 0; font-weight: 600; opacity: .7">[이직문의] '${userId}'님으로부터 이직 문의가 들어왔습니다.</dd>
+                <div style="margin: 16px 0 0 0; padding: 12px 12px 60px 12px;box-sizing: border-box;">
+                  <div style="padding: 34px; box-sizing: border-box;background: #fff;border-radius: 12px;box-shadow: 0 0.75rem 2rem 0 rgba(0, 0, 0, 0.1);">
+                    <h1 style="margin: 0;padding: 0; color: #414141;">'${userId}'님의 사이트로부터 문의 메일이 도착했습니다.</h1>
+                    <p style="color: #999; margin: 8px 0 34px 0; padding: 0;">메일 내용은 아래와 같습니다.</p>
+                    <ul style="list-style: none;margin: 0 0 38px 0;padding: 0 0 18px 0; border-bottom: 1px solid rgb(231, 231, 231);">
+                      <li style="margin-bottom: 12px;">
+                        <dl style="display: flex;align-items: flex-start;">
+                          <dt style="min-width: 60px;opacity: .6; white-space: nowrap;">제목&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
+                          <dd style="margin: 0;padding: 0; font-weight: 600; opacity: .7">[이직문의] '${userId}'님으로부터 이직 문의가 들어왔습니다.</dd>
                 </dl>  
               </li>
               <li style="margin-bottom: 12px;">
                 <dl style="display: flex;align-items: flex-start;">
                   <dt style="min-width: 60px;opacity: .6; white-space: nowrap;">이메일&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
                   <dd style="margin: 0;padding: 0; font-weight: 600; opacity: .7;">${email}</dd>
-                </dl>  
-              </li>
-              <li>
-                <dl style="display: flex;align-items: flex-start;">
-                  <dt style="min-width: 60px;opacity: .6; white-space: nowrap;">연락처&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
-                  <dd style="margin: 0;padding: 0; font-weight: 600; opacity: .7;">${phone}</dd>
-                </dl>  
-              </li>
-            </ul>
+                  </dl>  
+                  </li>
+                  <li>
+                    <dl style="display: flex;align-items: flex-start;">
+                      <dt style="min-width: 60px;opacity: .6; white-space: nowrap;">연락처&nbsp;&nbsp;:&nbsp;&nbsp;</dt>
+                      <dd style="margin: 0;padding: 0; font-weight: 600; opacity: .7;">${phone}</dd>
+                      </dl>  
+                      </li>
+                      </ul>
             <p style="margin-top:30px;">${message}</p>
           </div>
-        </div>
-        `,
+          </div>
+          `,
               };
-              const res = await fetch('https://kimjihodo.synology.me:3001/email/send', {
-                // const res = await fetch('http://localhost:3000/email/send', {
+              const res = await fetch(process.env.MAIL_API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(param),
               })
-              this.$refs.value1.value = ""
-              this.$refs.value2.value = ""
-              this.$refs.value3.value = ""
-              this.$refs.value4.value = ""
-              alert('메일 전송되었습니다!');
+              if (res.status === 200) {
+                this.$refs.value1.value = ""
+                this.$refs.value2.value = ""
+                this.$refs.value3.value = ""
+                this.$refs.value4.value = ""
+                alert('메일 전송되었습니다!');
+              } else {
+                throw new Error(`${res.status} 오류 발생`);
+              }
             } catch (error) {
               console.log(error);
               alert('메일 전송이 실패했습니다.');
