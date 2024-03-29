@@ -57,6 +57,6 @@ npm run deploy
 
 이를 위해 `.env.production` 파일을 프로젝트 루트 디렉토리에 생성하고 다음과 같이 환경 변수를 추가합니다.
 
-아래에는 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be.js)가 실행되고있는 호스트 주소를 적어줍니다.
+아래에는 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be)가 실행되고있는 호스트 주소를 적어줍니다.
 ```plaintext
 MAIL_API_URL=https://example-host.com:3000
