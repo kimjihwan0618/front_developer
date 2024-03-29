@@ -29,7 +29,6 @@ npm run dev
 
 ``
 npm run generate
-
 ``
 
 5. 앱 배포 
@@ -38,11 +37,15 @@ npm run generate
 npm run deploy
 ``
 
+
 ## 기능
 - 스크롤 위치에 따라 프로젝트 아이템이 나타나고, 스크롤이 벗어나면 아이템이 사라지는 애니메이션을 적용.
 
 ![프로젝트 섹션 이미지](./assets/images/project_scroll_ani.gif)
-- 페이지 맨 하단에는 메일 폼이 있으며, 이를 통해 메일을 전송할 경우, 
+
+
+-페이지 맨 하단에는 메일 폼이 있으며, 이를 통해 메일을 전송할 경우, 
+
 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be/blob/main/controllers/emailCtrl.js)의 `sendMail` 실행.
 
 ![메일 전송 이미지](./assets/images/mail_send.gif)
@@ -50,7 +53,8 @@ npm run deploy
 
 ## 환경 변수 설정
 
-배포할 때 사용할 환경 변수를 설정해야 합니다. 
+배포할 때 사용할 환경 변수를 설정해야 합니다.
+
 이를 위해 `.env.production` 파일을 프로젝트 루트 디렉토리에 생성하고 다음과 같이 환경 변수를 추가합니다.
 
 아래에는 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be.js)가 실행되고있는 호스트 주소를 적어줍니다.
