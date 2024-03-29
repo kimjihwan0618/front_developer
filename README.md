@@ -44,7 +44,8 @@ npm run deploy
 ![프로젝트 섹션 이미지](./assets/images/project_scroll_ani.gif)
 
 
--페이지 맨 하단에는 메일 폼이 있으며, 이를 통해 메일을 전송할 경우, 
+
+- 페이지 맨 하단에는 메일 폼이 있으며, 이를 통해 메일을 전송할 경우, 
 
 [mypopol_admin_be 프로젝트](https://github.com/kimjihwan0618/mypopol_admin_be/blob/main/controllers/emailCtrl.js)의 `sendMail` 실행.
 
