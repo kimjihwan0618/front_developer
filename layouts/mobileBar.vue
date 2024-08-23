@@ -81,26 +81,26 @@ export default {
       menuTitle: [
         { name: "HOME", link: "?section=home" },
         { name: "ABOUT ME", link: "?section=aboutme" },
-        { name: "CAREER", link: "?section=career" },
+        // { name: "CAREER", link: "?section=career" },
         { name: "SKILL", link: "?section=skill" },
         { name: "PROJECT", link: "?section=project" },
-        { name: "CONTACT", link: "?section=contact" }
-      ]
+        { name: "CONTACT", link: "?section=contact" },
+      ],
     };
   },
   methods: {
     mobileNavClick(index) {
       this.$nuxt.$emit("clickNav", index);
       this.$emit("mobileMenuClick");
-    }
+    },
   },
   created() {
-    this.$nuxt.$on("navChange", index => {
-      this.$refs.navLink.map(navArr => {
+    this.$nuxt.$on("navChange", (index) => {
+      this.$refs.navLink.map((navArr) => {
         navArr.$el.classList.remove("nuxt-link-exact-active");
       });
       this.$refs.navLink[index].$el.classList.add("nuxt-link-exact-active");
     });
-  }
+  },
 };
 </script>
